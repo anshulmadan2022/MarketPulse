@@ -1,0 +1,20 @@
+# Node.js files
+node_modules/
+
+# Deno files
+deno.lock
+deno.json
+
+# Log files
+*.log
+
+# Temp files
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+
+# Other files
+.env
+.env.example
