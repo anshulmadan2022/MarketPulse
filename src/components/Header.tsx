@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Menu, X, Search, User, LogOut, Sparkles } from 'lucide-react';
 import { Input } from './ui/input';
@@ -16,15 +17,24 @@ import { toast } from 'sonner@2.0.3';
 import { motion } from 'framer-motion';
 
 interface HeaderProps {
-  currentPage: string;
   onNavigate: (page: string) => void;
 }
 
-export function Header({ currentPage, onNavigate }: HeaderProps) {
+export function Header({ onNavigate }: HeaderProps) {
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  // Determine current page from URL
+  const getCurrentPage = () => {
+    const path = location.pathname;
+    if (path === '/') return 'home';
+    return path.substring(1).split('/')[0]; // Remove leading slash and get first segment
+  };
+
+  const currentPage = getCurrentPage();
 
   useEffect(() => {
     checkAuth();

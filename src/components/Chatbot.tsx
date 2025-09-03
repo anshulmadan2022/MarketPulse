@@ -1,18 +1,27 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { 
-  MessageCircle, 
-  X, 
-  Send, 
-  Bot, 
-  User, 
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import {
+  MessageCircle,
+  X,
+  Send,
+  Bot,
+  User,
   TrendingUp,
-  Search,
-  Eye,
-  HelpCircle
+  BarChart3,
+  PieChart,
+  Sparkles,
+  AlertTriangle,
+  Minimize2,
+  Maximize2,
+  Copy,
+  ThumbsUp,
+  ThumbsDown,
+  RefreshCw,
+  Activity
 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
+// --- REMOVED GEMINI SERVICE IMPORT FOR DUMMY CHATBOT ---
 
 interface Message {
   id: string;
@@ -20,261 +29,608 @@ interface Message {
   sender: 'user' | 'bot';
   timestamp: Date;
   suggestions?: string[];
+  type?: 'analysis' | 'ipo' | 'portfolio' | 'general' | 'data_fetch';
+  isLoading?: boolean;
+  error?: boolean;
 }
 
-interface ChatbotProps {
-  onNavigate?: (page: string) => void;
-  onStockSelect?: (symbol: string) => void;
-}
-
-export function Chatbot({ onNavigate, onStockSelect }: ChatbotProps) {
+export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: 'Hello! I\'m your MarketPulse assistant. I can help you with stock analysis, market information, and navigation. What would you like to know?',
-      sender: 'bot',
-      timestamp: new Date(),
-      suggestions: [
-        'Analyze RELIANCE stock',
-        'Show me value stocks',
-        'What are today\'s top gainers?',
-        'Open stock screener'
-      ]
-    }
-  ]);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [initialized, setInitialized] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  // Hardcoded Q&A for demo purposes
+  const hardcodedResponses: { [key: string]: { text: string; type: Message['type']; suggestions?: string[] } } = {
+    "hello": {
+      text: "Hello! How can I assist you with the Indian stock market today?",
+      type: "general",
+      suggestions: ['📊 Analyze RELIANCE.BSE stock', '🎯 Today\'s IPO opportunities']
+    },
+    "hi": {
+      text: "Hi there! I'm ready to help with your market queries. What's on your mind?",
+      type: "general",
+      suggestions: ['📈 Market sentiment analysis', '💎 Show value stocks under ₹500']
+    },
+    "analyze reliance.bse stock": {
+      text: `**Reliance Industries Ltd (RELIANCE.BSE) Analysis:**
+
+📊 **Current Market Snapshot (Dummy Data):**
+*   **Price:** ₹2,458.90
+*   **Change:** +15.50 (+0.63%)
+*   **Volume:** 1,250,000 shares
+
+📈 **Key Insights:**
+*   Reliance continues to show **strong performance** in its diversified sectors including energy, retail, and telecom.
+*   Recent expansion in its **green energy initiatives** presents long-term growth potential.
+*   Technically, the stock is trading above its 50-day moving average, indicating **positive momentum**.
+*   **Support Level:** ₹2,430, **Resistance Level:** ₹2,480.
+
+🎯 **Recommendation:** Given its robust fundamentals and strategic growth areas, a **"Hold with positive bias"** is advised for long-term investors. Consider buying on dips.
+
+⚠️ **Risk Factors:** Global crude oil price volatility, increased competition in retail/telecom, and regulatory changes.
+
+Would you like a deeper dive into its financials or technical indicators?`,
+      type: "analysis",
+      suggestions: ['📈 Price targets', '⚠️ Risk factors', '💡 Similar stocks']
+    },
+    "show value stocks under ₹500": {
+      text: `🔍 **Value Stocks Under ₹500 (Dummy List):**
+
+Here are a few potential value stocks currently trading below ₹500, based on fundamental screening:
+
+1.  **ABC Corp (ABC.BSE)** - Approx. ₹320
+    *   **P/E Ratio:** 12x (vs. sector average 18x)
+    *   **ROE:** 18%
+    *   **Notes:** Strong balance sheet, consistent dividend payer in the manufacturing sector.
+
+2.  **XYZ Tech (XYZ.BSE)** - Approx. ₹480
+    *   **P/E Ratio:** 15x (vs. sector average 25x)
+    *   **ROE:** 22%
+    *   **Notes:** Mid-cap IT company with growing order book and good management.
+
+3.  **PQR Foods (PQR.BSE)** - Approx. ₹210
+    *   **P/E Ratio:** 10x (vs. sector average 16x)
+    *   **ROE:** 15%
+    *   **Notes:** Established FMCG player, defensive stock with stable cash flows.
+
+Remember to conduct your own due diligence before investing. These are illustrative examples.`,
+      type: "portfolio",
+      suggestions: ['🎯 Find more stocks', '📊 Compare these stocks', '📈 Small-cap opportunities']
+    },
+    "today's ipo opportunities": {
+      text: `🎯 **Today's IPO Opportunities (Dummy Data):**
+
+Currently, there are no *new* IPOs opening today. However, here's an update on ongoing/recently closed IPOs:
+
+*   **Tech Innovations IPO (TI.BSE)**
+    *   **Status:** Subscription closed (Oversubscribed 50x)
+    *   **Expected Listing:** Next week
+    *   **GMP (Grey Market Premium):** ₹80-90 (indicating strong demand)
+    *   **Notes:** Specializes in AI-driven solutions. High growth potential.
+
+*   **Green Energy Solutions IPO (GES.BSE)**
+    *   **Status:** Open for subscription (Ends tomorrow)
+    *   **Subscription So Far:** Retail 5x, HNI 3x, QIB 2x
+    *   **Price Band:** ₹180-190 per share
+    *   **Notes:** Focus on renewable energy projects.
+
+Consider applying for GES.BSE if it aligns with your risk appetite.`,
+      type: "ipo",
+      suggestions: ['📊 Subscription status', '💰 Grey market premium', '📈 Listing performance']
+    },
+    "market sentiment analysis": {
+      text: `📈 **Indian Market Sentiment (Dummy Analysis):**
+
+Current market sentiment appears to be **cautiously optimistic**.
+
+*   **NIFTY 50:** Trading near all-time highs, indicating underlying strength.
+*   **FII/DII Flows:** Foreign Institutional Investors (FIIs) have shown net buying this week, supported by consistent Domestic Institutional Investor (DII) inflows.
+*   **VIX India:** Remains at moderate levels (around 12-14), suggesting limited immediate fear.
+*   **Sectoral Performance:** IT and Banking sectors are showing leadership, while pharma and FMCG are consolidating.
+
+Overall, the sentiment is positive but requires vigilance due to global macroeconomic factors.`,
+      type: "market_trends",
+      suggestions: ['📉 What are the risks?', '⚖️ Diversify portfolio', '📊 Top performing sectors']
+    },
+    "help me with portfolio diversification": {
+      text: `⚖️ **Portfolio Diversification Strategies (General Advice):**
+
+Diversification is key to managing risk and enhancing returns. Here are some strategies:
+
+1.  **Asset Class Diversification:** Allocate across equities, debt, gold, and real estate.
+2.  **Sectoral Diversification:** Avoid over-exposure to a single sector. Aim for a mix of cyclical (e.g., auto, banking) and defensive (e.g., FMCG, pharma) sectors.
+3.  **Market Cap Diversification:** Include a mix of large-cap, mid-cap, and small-cap stocks based on your risk profile.
+4.  **Geographic Diversification:** While focused on Indian markets, consider international exposure through Indian mutual funds/ETFs for broader global opportunities.
+
+Would you like me to discuss specific ratios or allocation percentages?`,
+      type: "portfolio",
+      suggestions: ['🎯 Asset allocation', '📊 Risk assessment', '💡 New additions']
+    },
+    "thank you": {
+      text: "You're most welcome! Is there anything else I can help you with today regarding the Indian stock market?",
+      type: "general",
+      suggestions: ['🔄 Start a new query', '❌ Close chat'] // '❌ Close chat' is here
+    },
+    "how are you": {
+      text: "As an AI, I don't have feelings, but I'm operating perfectly and ready to assist you!",
+      type: "general",
+      suggestions: ['📊 Analyze a stock', '🎯 IPO insights']
+    },
   };
 
+  // Initialize welcome message only once
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    if (!initialized && isOpen) {
+      setMessages([{
+        id: 'welcome-1',
+        text: 'Welcome to MarketPulse AI! I\'m your advanced Indian stock market analyst specializing in BSE markets.\n\nI can help you with:\n📊 Real-time stock analysis\n💼 Portfolio optimization\n🎯 Technical & fundamental analysis\n🔍 IPO insights & valuations\n⚠️ Risk management strategies\n📈 Market trends & opportunities',
+        sender: 'bot',
+        timestamp: new Date(),
+        type: 'general',
+        suggestions: [
+          '📊 Analyze RELIANCE.BSE stock',
+          '💎 Show value stocks under ₹500',
+          '🎯 Today\'s IPO opportunities',
+          '📈 Market sentiment analysis',
+          '🔍 Open stock screener'
+        ]
+      }]);
+      setInitialized(true);
+    }
+  }, [initialized, isOpen]);
 
-  const generateBotResponse = (userMessage: string): Message => {
-    const lowercaseMessage = userMessage.toLowerCase();
-    let botText = '';
-    let suggestions: string[] = [];
+  const scrollToBottom = useCallback(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end'
+      });
+    }
+  }, []);
 
-    // Intent recognition (simplified rule-based system)
-    if (lowercaseMessage.includes('analyze') || lowercaseMessage.includes('analysis')) {
-      if (lowercaseMessage.includes('reliance')) {
-        botText = 'I can help you analyze RELIANCE stock. Let me take you to the detailed analysis page with charts, fundamentals, and key metrics.';
-        onStockSelect?.('RELIANCE');
-      } else if (lowercaseMessage.includes('tcs')) {
-        botText = 'I can help you analyze TCS stock. Let me take you to the detailed analysis page.';
-        onStockSelect?.('TCS');
-      } else {
-        botText = 'I can help you analyze specific stocks. Please mention a stock symbol like RELIANCE, TCS, HDFCBANK, or use our stock screener to find stocks based on your criteria.';
-        suggestions = ['Analyze RELIANCE', 'Analyze TCS', 'Open screener', 'Show popular stocks'];
+  useEffect(() => {
+    if (messages.length > 0) {
+      setTimeout(scrollToBottom, 100);
+    }
+  }, [messages, scrollToBottom]);
+
+  const generateBotResponse = async (userMessage: string): Promise<Message> => {
+    setIsTyping(true);
+    await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate AI processing time
+
+    const cleanedUserMessage = userMessage.toLowerCase().trim();
+    let response = hardcodedResponses[cleanedUserMessage];
+
+    if (!response) {
+      // Fuzzy matching or general fallback if exact match not found
+      if (cleanedUserMessage.includes("reliance") || cleanedUserMessage.includes("r.bse")) {
+        response = hardcodedResponses["analyze reliance.bse stock"];
+      } else if (cleanedUserMessage.includes("ipo")) {
+        response = hardcodedResponses["today's ipo opportunities"];
+      } else if (cleanedUserMessage.includes("value stocks") || cleanedUserMessage.includes("under 500")) {
+        response = hardcodedResponses["show value stocks under ₹500"];
+      } else if (cleanedUserMessage.includes("market sentiment") || cleanedUserMessage.includes("market trends")) {
+        response = hardcodedResponses["market sentiment analysis"];
+      } else if (cleanedUserMessage.includes("portfolio") || cleanedUserMessage.includes("diversify")) {
+        response = hardcodedResponses["help me with portfolio diversification"];
+      } else if (cleanedUserMessage.includes("thank you")) {
+        response = hardcodedResponses["thank you"];
+      } else if (cleanedUserMessage.includes("close chat")) { // Handle "Close chat" suggestion
+        setIsOpen(false);
+        setIsDismissed(true);
+        response = {
+          text: "Closing the chat now. Feel free to open me again if you need assistance!",
+          type: "general"
+        };
       }
-    } else if (lowercaseMessage.includes('screener') || lowercaseMessage.includes('filter') || lowercaseMessage.includes('screen')) {
-      botText = 'I\'ll take you to our advanced stock screener where you can filter stocks by market cap, P/E ratio, sector, and many other parameters.';
-      onNavigate?.('screener');
-      suggestions = ['Show value stocks', 'Find high dividend stocks', 'Filter by sector'];
-    } else if (lowercaseMessage.includes('value stock') || lowercaseMessage.includes('undervalued')) {
-      botText = 'For value stocks, I recommend using our screener with filters like low P/E ratio (< 15), low P/B ratio (< 2), and good ROE (> 15%). Let me open the screener for you.';
-      onNavigate?.('screener');
-    } else if (lowercaseMessage.includes('gainer') || lowercaseMessage.includes('top stock')) {
-      botText = 'You can find today\'s top gainers and losers on our home page. I can also take you to the screener to find stocks with recent positive performance.';
-      onNavigate?.('home');
-      suggestions = ['Show top losers', 'Open screener', 'Analyze a specific stock'];
-    } else if (lowercaseMessage.includes('ipo')) {
-      botText = 'I can help you with IPO information. Let me take you to our IPO Center where you can see upcoming IPOs, current issues, and recent listings.';
-      onNavigate?.('ipo');
-    } else if (lowercaseMessage.includes('dividend')) {
-      botText = 'For dividend-focused investing, you can use our screener to filter stocks by dividend yield. Stocks like ITC, HDFC Bank, and Hindustan Unilever are known for consistent dividends.';
-      suggestions = ['Filter by dividend yield', 'Show dividend aristocrats', 'Analyze ITC'];
-    } else if (lowercaseMessage.includes('sector') || lowercaseMessage.includes('industry')) {
-      botText = 'You can filter stocks by sector in our screener. Popular sectors include IT (TCS, Infosys), Banking (HDFC, ICICI), Energy (Reliance), and FMCG (HUL, ITC).';
-      suggestions = ['Show IT stocks', 'Show banking stocks', 'Open screener'];
-    } else if (lowercaseMessage.includes('help') || lowercaseMessage.includes('how')) {
-      botText = 'I can help you with:\n• Stock analysis and detailed reports\n• Finding stocks using our advanced screener\n• IPO information and tracking\n• Market insights and navigation\n\nWhat specific help do you need?';
-      suggestions = ['Stock analysis', 'Use screener', 'IPO information', 'Market overview'];
-    } else if (lowercaseMessage.includes('hello') || lowercaseMessage.includes('hi')) {
-      botText = 'Hello! Welcome to MarketPulse India. I\'m here to help you with stock analysis, market data, and finding the right investments. What can I assist you with today?';
-      suggestions = ['Analyze a stock', 'Find value stocks', 'Show IPOs', 'Market overview'];
-    } else {
-      botText = 'I understand you\'re looking for information. I can help with stock analysis, screener usage, IPO tracking, and market insights. Could you be more specific about what you need?';
-      suggestions = [
-        'Analyze RELIANCE stock',
-        'Show me value stocks', 
-        'Open stock screener',
-        'What can you help with?'
-      ];
+      else {
+        response = {
+          text: `I'm sorry, I don't have a specific answer for "${userMessage}" in my demo data. Try asking about "Reliance stock" or "IPO opportunities".`,
+          type: "general",
+          suggestions: ['📊 Analyze RELIANCE.BSE stock', '🎯 Today\'s IPO opportunities', '📈 Market sentiment analysis']
+        };
+      }
     }
 
+    setIsTyping(false);
+
     return {
-      id: Date.now().toString(),
-      text: botText,
+      id: `bot-${Date.now()}`,
+      text: response.text,
       sender: 'bot',
       timestamp: new Date(),
-      suggestions
+      type: response.type,
+      suggestions: response.suggestions
     };
   };
 
-  const handleSendMessage = () => {
-    if (!inputValue.trim()) return;
+  const handleSendMessage = async () => {
+    if (!inputValue.trim() || isTyping) return;
 
     const userMessage: Message = {
-      id: Date.now().toString(),
-      text: inputValue,
+      id: `user-${Date.now()}`,
+      text: inputValue.trim(),
       sender: 'user',
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    const currentInput = inputValue.trim();
     setInputValue('');
-    setIsTyping(true);
 
-    // Simulate bot thinking time
-    setTimeout(() => {
-      const botResponse = generateBotResponse(inputValue);
-      setMessages(prev => [...prev, botResponse]);
+    // Clear welcome message and add user message
+    setMessages(prevMessages => {
+      const withoutWelcome = prevMessages.filter(m => !m.id.startsWith('welcome'));
+      return [...withoutWelcome, userMessage];
+    });
+
+    // Check for "close chat" input directly
+    if (currentInput.toLowerCase().includes('close chat')) {
+      setIsOpen(false);
+      setIsDismissed(true);
+      // Optionally add a bot message about closing if you want
+      setMessages(prevMessages => [...prevMessages, {
+        id: `bot-${Date.now()}`,
+        text: "Closing the chat now. Feel free to open me again if you need assistance!",
+        sender: 'bot',
+        timestamp: new Date(),
+        type: "general"
+      }]);
+      return; // Stop further processing if closing
+    }
+
+    try {
+      const botResponse = await generateBotResponse(currentInput);
+      setMessages(prevMessages => [...prevMessages, botResponse]);
+    } catch (error) {
+      console.error('Error in handleSendMessage:', error);
+      const errorMessage: Message = {
+        id: `error-${Date.now()}`,
+        text: 'I apologize, but I\'m experiencing an unexpected error. Please try again in a moment.',
+        sender: 'bot',
+        timestamp: new Date(),
+        error: true,
+        suggestions: ['🔄 Try again', '📊 Stock analysis', '🎯 IPO insights']
+      };
+      setMessages(prevMessages => [...prevMessages, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1000 + Math.random() * 1000);
+    }
   };
 
+
   const handleSuggestionClick = (suggestion: string) => {
-    setInputValue(suggestion);
-    handleSendMessage();
+    const cleanSuggestion = suggestion.replace(/[📊💎🎯📈🔍⚖️💡❓🔄❌]/g, '').trim(); // Added ❌ to clean
+    setInputValue(cleanSuggestion);
+
+    // If "Close chat" suggestion is clicked, close the chat directly
+    if (cleanSuggestion.toLowerCase() === 'close chat') {
+      setIsOpen(false);
+      setIsDismissed(true);
+      // Also send a message to reflect this action
+      setMessages(prevMessages => [...prevMessages, {
+        id: `user-${Date.now()}-close`,
+        text: "Close chat",
+        sender: 'user',
+        timestamp: new Date()
+      }, {
+        id: `bot-${Date.now()}-closed`,
+        text: "Closing the chat now. Feel free to open me again if you need assistance!",
+        sender: 'bot',
+        timestamp: new Date(),
+        type: "general"
+      }]);
+    }
   };
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-IN', { 
-      hour: '2-digit', 
-      minute: '2-digit' 
+    return date.toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit'
     });
+  };
+
+  const getMessageTypeIcon = (type?: string) => {
+    switch (type) {
+      case 'analysis': return <BarChart3 className="w-4 h-4 text-blue-500" />;
+      case 'ipo': return <TrendingUp className="w-4 h-4 text-purple-500" />;
+      case 'portfolio': return <PieChart className="w-4 h-4 text-green-500" />;
+      case 'data_fetch': return <Activity className="w-4 h-4 text-orange-500" />;
+      default: return <Sparkles className="w-4 h-4 text-green-600" />;
+    }
+  };
+
+  const copyMessage = (text: string) => {
+    navigator.clipboard.writeText(text);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
   };
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      {/* Chat Button */}
-      {!isOpen && (
-        <Button
-          onClick={() => setIsOpen(true)}
-          size="lg"
-          className="rounded-full w-14 h-14 bg-[#0F9D58] hover:bg-[#0e8a4f] shadow-lg"
-        >
-          <MessageCircle className="w-6 h-6" />
-        </Button>
+      {/* Chat Button - Fixed positioning and better visibility */}
+      {!isOpen && !isDismissed && (
+        <div className="relative">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="rounded-full w-16 h-16 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center border-4 border-white"
+            title="Open MarketPulse AI"
+          >
+            <div className="relative">
+              <MessageCircle className="w-7 h-7" />
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                <Sparkles className="w-2 h-2 text-white" />
+              </div>
+            </div>
+          </button>
+          {/* Tooltip */}
+          <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+            MarketPulse AI Assistant
+            <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+          </div>
+        </div>
       )}
 
-      {/* Chat Window */}
+      {/* Chat Window - Fixed size and positioning */}
       {isOpen && (
-        <Card className="w-80 h-96 shadow-2xl border-2 border-gray-200">
-          <CardHeader className="bg-[#0F9D58] text-white p-4">
+        <div className={`bg-gray-100 rounded-2xl shadow-2xl border border-gray-300 transition-all duration-300 ${
+          isMinimized ? 'w-80 h-16' : 'w-96 h-[600px]' // This line defines the fixed size
+        }`}>
+          {/* Header */}
+          <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-4 rounded-t-2xl">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-[#0F9D58]" />
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+                  <Bot className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <CardTitle className="text-sm">MarketPulse Assistant</CardTitle>
-                  <p className="text-xs text-green-100">Always ready to help</p>
+                  <div className="text-lg font-bold">MarketPulse AI</div>
+                  <div className="flex items-center space-x-2 text-green-100 text-xs">
+                    <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
+                    <span>AI Online</span>
+                  </div>
                 </div>
               </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsOpen(false)}
-                className="text-white hover:bg-[#0e8a4f] p-1"
-              >
-                <X className="w-4 h-4" />
-              </Button>
-            </div>
-          </CardHeader>
-
-          <CardContent className="flex flex-col h-80 p-0">
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {messages.map((message) => (
-                <div key={message.id} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[80%] rounded-lg p-3 ${
-                    message.sender === 'user' 
-                      ? 'bg-[#0F9D58] text-white' 
-                      : 'bg-gray-100 text-gray-800'
-                  }`}>
-                    <div className="flex items-start space-x-2">
-                      {message.sender === 'bot' && (
-                        <Bot className="w-4 h-4 mt-0.5 text-[#0F9D58]" />
-                      )}
-                      {message.sender === 'user' && (
-                        <User className="w-4 h-4 mt-0.5" />
-                      )}
-                      <div className="flex-1">
-                        <p className="text-sm whitespace-pre-line">{message.text}</p>
-                        <p className={`text-xs mt-1 ${
-                          message.sender === 'user' ? 'text-green-100' : 'text-gray-500'
-                        }`}>
-                          {formatTime(message.timestamp)}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    {/* Suggestions */}
-                    {message.suggestions && message.suggestions.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mt-2">
-                        {message.suggestions.map((suggestion, index) => (
-                          <button
-                            key={index}
-                            onClick={() => handleSuggestionClick(suggestion)}
-                            className="text-xs bg-white text-[#0F9D58] px-2 py-1 rounded border hover:bg-gray-50 transition-colors"
-                          >
-                            {suggestion}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-              
-              {/* Typing Indicator */}
-              {isTyping && (
-                <div className="flex justify-start">
-                  <div className="bg-gray-100 rounded-lg p-3 max-w-[80%]">
-                    <div className="flex items-center space-x-2">
-                      <Bot className="w-4 h-4 text-[#0F9D58]" />
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
-
-            {/* Input */}
-            <div className="border-t p-4">
-              <div className="flex space-x-2">
-                <Input
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  placeholder="Ask me about stocks..."
-                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                  className="flex-1"
-                />
-                <Button 
-                  onClick={handleSendMessage}
-                  size="sm"
-                  className="bg-[#0F9D58] hover:bg-[#0e8a4f]"
-                  disabled={!inputValue.trim() || isTyping}
+              <div className="flex items-center space-x-1">
+                <button
+                  onClick={() => setIsMinimized(!isMinimized)}
+                  className="text-white hover:bg-white hover:bg-opacity-20 p-2 rounded-lg transition-colors"
+                  title={isMinimized ? "Expand" : "Minimize"}
                 >
-                  <Send className="w-4 h-4" />
-                </Button>
+                  {isMinimized ? <Maximize2 className="w-4 h-4" /> : <Minimize2 className="w-4 h-4" />}
+                </button>
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsDismissed(true);
+                  }}
+                  className="text-white hover:bg-white hover:bg-opacity-20 p-2 rounded-lg transition-colors"
+                  title="Close" // This is the close button
+                >
+                  <X className="w-4 h-4" />
+                </button>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+
+          {/* Chat Content */}
+          {!isMinimized && (
+            <div className="flex flex-col flex-1"> {/* Removed fixed height, using flex-1 */}
+              {/* Messages Area with proper scrolling */}
+              <div
+                ref={messagesContainerRef}
+                className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50" // `flex-1` here is already correct
+                style={{
+                  scrollbarWidth: 'thin',
+                  scrollbarColor: '#CBD5E0 transparent'
+                }}
+              >
+                {messages.map((message, index) => (
+                  <div key={message.id} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                    <div className={`max-w-[85%] rounded-2xl shadow-sm ${
+                      message.sender === 'user'
+                        ? 'bg-green-600 text-white'
+                        : message.error
+                        ? 'bg-red-50 text-red-800 border border-red-200'
+                        : 'bg-white text-gray-800 border border-gray-100'
+                    }`}>
+                      <div className="p-4">
+                        <div className="flex items-start space-x-3">
+                          {message.sender === 'bot' && (
+                            <div className="flex-shrink-0 mt-1">
+                              {message.error ? (
+                                <AlertTriangle className="w-4 h-4 text-red-500" />
+                              ) : (
+                                getMessageTypeIcon(message.type)
+                              )}
+                            </div>
+                          )}
+                          {message.sender === 'user' && (
+                            <User className="w-4 h-4 mt-1 flex-shrink-0 opacity-80" />
+                          )}
+                          <div className="flex-1 min-w-0">
+                            {message.sender === 'bot' ? (
+                              // Removed className prop directly from ReactMarkdown
+                              <div className="markdown-body whitespace-pre-wrap text-sm leading-relaxed">
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                  {message.text}
+                                </ReactMarkdown>
+                              </div>
+                            ) : (
+                              <div className="whitespace-pre-line text-sm leading-relaxed">
+                                {message.text}
+                              </div>
+                            )}
+                            <div className="flex items-center justify-between mt-3">
+                              <span className={`text-xs ${
+                                message.sender === 'user' ? 'text-green-100' : message.error ? 'text-red-500' : 'text-gray-500'
+                              }`}>
+                                {formatTime(message.timestamp)}
+                                {message.error && ' • Error'}
+                              </span>
+                              {message.sender === 'bot' && (
+                                <div className="flex items-center space-x-1 opacity-60 hover:opacity-100 transition-opacity">
+                                  <button
+                                    onClick={() => copyMessage(message.text)}
+                                    className="text-gray-400 hover:text-gray-600 p-1 rounded transition-colors"
+                                    title="Copy message"
+                                  >
+                                    <Copy className="w-3 h-3" />
+                                  </button>
+                                  <button
+                                    className="text-gray-400 hover:text-green-500 p-1 rounded transition-colors"
+                                    title="Helpful"
+                                  >
+                                    <ThumbsUp className="w-3 h-3" />
+                                  </button>
+                                  <button
+                                    className="text-gray-400 hover:text-red-500 p-1 rounded transition-colors"
+                                    title="Not helpful"
+                                  >
+                                    <ThumbsDown className="w-3 h-3" />
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                       
+                        {/* Suggestions - Only show for last bot message */}
+                        {message.suggestions &&
+                         message.suggestions.length > 0 &&
+                         message.sender === 'bot' &&
+                         index === messages.length - 1 &&
+                         inputValue.trim() === '' && (
+                          <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-gray-100">
+                            {message.suggestions.map((suggestion, suggestionIndex) => (
+                              <button
+                                key={suggestionIndex}
+                                onClick={() => handleSuggestionClick(suggestion)}
+                                className="text-xs bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-3 py-2 rounded-full border border-blue-200 hover:from-blue-100 hover:to-indigo-100 hover:border-blue-300 transition-all duration-200 transform hover:scale-105"
+                              >
+                                {suggestion}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+               
+                {/* Typing Indicator */}
+                {isTyping && (
+                  <div className="flex justify-start">
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 max-w-[85%]">
+                      <div className="flex items-center space-x-3">
+                        <Sparkles className="w-4 h-4 text-green-600 animate-pulse" />
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm text-gray-600">MarketPulse AI is analyzing</span>
+                          <div className="flex space-x-1">
+                            <div className="w-2 h-2 bg-green-600 rounded-full animate-bounce"></div>
+                            <div className="w-2 h-2 bg-green-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                            <div className="w-2 h-2 bg-green-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Input Area */}
+              <div className="border-t border-gray-200 p-4 bg-white rounded-b-2xl">
+                <div className="flex items-end space-x-3">
+                  <div className="flex-1">
+                    <div className="relative">
+                      <input
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        placeholder="Ask about stocks, IPOs, market trends..."
+                        onKeyPress={handleKeyPress}
+                        className="w-full rounded-xl border-2 border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 pr-12 py-3 text-sm focus:outline-none transition-colors"
+                        disabled={isTyping}
+                      />
+                      {inputValue && (
+                        <button
+                          onClick={() => setInputValue('')}
+                          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                          title="Clear"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      )}
+                    </div>
+                   
+                    {/* Quick Actions */}
+                    <div className="flex items-center space-x-2 mt-2">
+                      <button
+                        onClick={() => handleSuggestionClick('Analyze RELIANCE.BSE stock')} // Changed to use handleSuggestionClick
+                        className="text-xs text-green-600 hover:text-green-800 flex items-center space-x-1 px-2 py-1 rounded-lg hover:bg-green-50 transition-colors"
+                      >
+                        <BarChart3 className="w-3 h-3" />
+                        <span>Quick Analysis</span>
+                      </button>
+                      <button
+                        onClick={() => handleSuggestionClick('Show current IPO opportunities')} // Changed to use handleSuggestionClick
+                        className="text-xs text-green-600 hover:text-green-800 flex items-center space-x-1 px-2 py-1 rounded-lg hover:bg-green-50 transition-colors"
+                      >
+                        <TrendingUp className="w-3 h-3" />
+                        <span>IPOs</span>
+                      </button>
+                      <button
+                        onClick={() => handleSuggestionClick('Help me with portfolio diversification')} // Changed to use handleSuggestionClick
+                        className="text-xs text-green-600 hover:text-green-800 flex items-center space-x-1 px-2 py-1 rounded-lg hover:bg-green-50 transition-colors"
+                      >
+                        <PieChart className="w-3 h-3" />
+                        <span>Portfolio</span>
+                      </button>
+                    </div>
+                  </div>
+                 
+                  <button
+                    onClick={handleSendMessage}
+                    className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 rounded-xl px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={!inputValue.trim() || isTyping}
+                  >
+                    {isTyping ? (
+                      <RefreshCw className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <Send className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
+               
+                {/* Status Bar */}
+                <div className="flex items-center justify-between mt-3 text-xs text-gray-500">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>AI Online</span>
+                    <div className="flex items-center space-x-1">
+                      <Activity className="w-3 h-3" />
+                      <span>Dummy Data</span> {/* Changed from Real-time Data */}
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div>Powered by Dummy AI</div> {/* Changed from Powered by AI */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
-}
+} 
