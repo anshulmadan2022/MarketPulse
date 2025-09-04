@@ -1,0 +1,1124 @@
+[
+    {
+        "company_name": "Amanta Healthcare Ltd",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue decreased by 2% from FY24 to FY25; PAT up 189%. EBITDA margin for FY25 at 22.11%, PAT margin at 3.86%. Consistent improvement from FY23 to FY25.",
+            "eps_trends": "EPS Pre-IPO: ₹3.64, Post-IPO: ₹2.70. FY23: -₹2.11 Cr, FY24: ₹3.63 Cr, FY25: ₹10.50 Cr.",
+            "debt_to_equity_ratio": "2.02 (moderately high leverage).",
+            "cash_flow_strength": "Improving net worth; reserves rising. Direct cash flow details not provided but profitability and equity base are growing.",
+            "business_model_and_competitive_advantage": "Sterile pharma/IV products manufacturer; exports to 21 countries; advanced packaging; Aseptic BFS; broad product portfolio.",
+            "promoter_reputation_and_track_record": "Promoters: Bhavesh Patel & family. Pre-IPO holding 85.6%, post-IPO 63.56%. Established sector reputation."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Consistent demand in sterile/IV pharma but sector is fragmented and competitive.",
+            "sector_performance_and_peer_ipo_success": "Peer IPOs recently have mixed results, some underperformed post-listing.",
+            "market_sentiment": "Strong IPO demand, high media and retail buzz, but valuation concerns raised by analysts.",
+            "global_economic_trends_impacting_sector": "No negative macro headwinds; strong export orientation; positive global pharma demand."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "Price Band ₹120–126; Post-IPO P/E 46.59, considered expensive.",
+            "ipo_size": "₹126 Crore, 1 crore shares (Fresh Issue).",
+            "offer_structure": "QIB 50%, NII 15%, Retail 35%, Anchor 30%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% until Oct 4, 2025; rest until Dec 3, 2025.",
+            "use_of_ipo_proceeds": "₹70 Cr for new SteriPort line, ₹30.13 Cr for SVP line, remainder for general corporate purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "35.86x",
+                    "nii": "209.40x",
+                    "retail_investors": "54.96x"
+                }
+            },
+            "institutional_investor_participation": "Heavy, strong anchor/QIB interest (>35x).",
+            "media_coverage_and_hype": "High, popular on message boards and in media.",
+            "retail_investor_interest": "Very high (retail 55x subscribed)."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "IPO listing scheduled for Sep 9, 2025 (not available yet).",
+            "price_stability_and_volatility": "To be tracked after listing.",
+            "trading_volume_after_listing": "To be observed after market debut.",
+            "post_ipo_earnings_performance": "Not applicable yet."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "All required approvals in place.",
+            "corporate_governance_standards": "Mainboard reporting and disclosures required.",
+            "pending_lawsuits_or_regulatory_disputes": "None mentioned."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Stable in India, supportive for equities.",
+            "inflation_trends": "Steady; no red flags mentioned.",
+            "global_market_conditions_and_foreign_fund_flows": "Bullish, as seen from strong QIB/Anchor (likely FPI/FDI) participation."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Not available; IPO yet to list.",
+            "support_and_resistance_levels": "Unavailable pre-listing.",
+            "momentum_indicators": "Unavailable pre-listing."
+        },
+        "key_takeaway": {
+            "positive": "High GMP + Oversubscription + Strong Fundamentals + Bullish Market → Strong chance of listing gains and post-IPO success.",
+            "negative": "Weak GMP, low subscription, overvalued IPO → Higher risk of underperformance."
+        }
+    },
+    {
+        "company_name": "Vikran Engineering Ltd",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue grew 17% and PAT up 4% FY24-FY25. EBITDA margin FY25: 17.5%, PAT margin: 8.44%. Order book and financials show steady growth trajectory.",
+            "eps_trends": "EPS Pre-IPO: ₹4.24, Post-IPO: ₹3.02. Steady profit growth (FY23: ₹42.84 Cr, FY24: ₹74.83 Cr, FY25: ₹77.82 Cr).",
+            "debt_to_equity_ratio": "0.58 (conservative leverage, sector-typical).",
+            "cash_flow_strength": "Net worth and reserves increasing (₹131.14 Cr in FY23, ₹291.28 Cr in FY24, ₹467.87 Cr in FY25). Asset-light model supports solid financial stability.",
+            "business_model_and_competitive_advantage": "EPC company, diversified in power, water infra, railway, solar. Large order book, pan-India execution, in-house technical expertise and strong execution record.",
+            "promoter_reputation_and_track_record": "Rakesh Ashok Markhedkar, Avinash Markhedkar, Nakul Markhedkar. Pre-IPO holding: 81.78%. Industry experience & proven management."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Fast-growing EPC sector; nationwide infra investments support multi-year growth runway.",
+            "sector_performance_and_peer_ipo_success": "Strong investor interest in EPC/IPOs; previous names show post-listing success.",
+            "market_sentiment": "Positive, with high oversubscription; brokers universally recommend subscribing.",
+            "global_economic_trends_impacting_sector": "Infrastructure as economic priority in India; stable macro environment."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "Price: ₹97. Post-IPO P/E: 32.15, Pre-IPO P/E: 22.88. Valuation fully priced but in line with sector leaders.",
+            "ipo_size": "₹772 Crore (7.96 Cr shares total); fresh issue: ₹721 Cr, OFS: ₹51 Cr.",
+            "offer_structure": "QIB: 50%, NII: 15%, Retail: 35%, Anchor: 30%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% ends Sep 30, 2025; rest by Nov 29, 2025.",
+            "use_of_ipo_proceeds": "₹541 Cr for working capital; ₹130 Cr for general corporate purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "20.51x",
+                    "nii": "61.77x",
+                    "retail_investors": "11.56x"
+                }
+            },
+            "institutional_investor_participation": "Strong (Anchor: ₹231.6 Cr; QIB: 20.51x). Shows major institutional trust.",
+            "media_coverage_and_hype": "High, regular news, forum interest, many broker recommendations (18 subscribe, 2 neutral, 0 avoid).",
+            "retail_investor_interest": "Very strong participation and allotment figures."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Sep 3, 2025. Open: ₹99.70 (BSE), High: ₹101.73, Low: ₹93.26, Close: ₹95.64.",
+            "price_stability_and_volatility": "Initial trading range: ₹93.26–₹101.73. Generally stable, mild downward closing.",
+            "trading_volume_after_listing": "Active, exact post-listing volume not specified.",
+            "post_ipo_earnings_performance": "First quarterly results pending after listing."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Mainboard IPO, all statutory approvals obtained.",
+            "corporate_governance_standards": "Governed by mainboard norms, strong in-house compliance.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Indian rates stable, positive for infra; no hindrance reported.",
+            "inflation_trends": "Normal/within acceptable range, doesn't hamper infra rollout.",
+            "global_market_conditions_and_foreign_fund_flows": "Continued global capital inflows in Indian infra."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Post-listing stable; within listing peer range. Needs more data for sector comparison.",
+            "support_and_resistance_levels": "Immediate support: ₹93.26, resistance: ₹101+. Rangebound on first day.",
+            "momentum_indicators": "Gained on listing, traded steady—suggesting mild upside momentum."
+        },
+        "key_takeaway": {
+            "positive": "Healthy subscription (QIB, NII, retail), robust fundamentals, order book, multi-sector infra play, well-received by institutional and retail investors.",
+            "negative": "Fully priced IPO, post-listing close below issue price. Short-term volatility possible."
+        }
+    },
+    {
+        "company_name": "Anlon Healthcare Ltd",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 81%, PAT up 112% FY24-FY25. FY25 revenue: ₹120.46 Cr, PAT: ₹20.52 Cr. EBITDA margin FY25: 26.88%, PAT margin: 17.06%.",
+            "eps_trends": "Pre-IPO EPS: ₹5.15. Post-IPO EPS: ₹3.86. PAT trend: FY23: ₹5.82 Cr, FY24: ₹9.66 Cr, FY25: ₹20.52 Cr. Steady upward trend.",
+            "debt_to_equity_ratio": "0.73 (conservative for sector, improving post IPO).",
+            "cash_flow_strength": "Net worth, reserves, and assets increasing; large cash influx from IPO will further strengthen position.",
+            "business_model_and_competitive_advantage": "Pharma intermediates, APIs. Strong DMF portfolio, custom chemical manufacturing, high entry/exit barriers due to customer cycle and compliance, broad product portfolio, quality focus.",
+            "promoter_reputation_and_track_record": "Promoters: Punitkumar Rasadia & family. Pre-IPO holding: 70.26%, post-IPO: 52.68%. Industry experience, rapidly scaling business."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "API/intermediates sector continues to grow, supported by pharma demand and China+1 opportunity.",
+            "sector_performance_and_peer_ipo_success": "SME pharma IPOs have performed well post-listing, though some profit booking seen in weaker names.",
+            "market_sentiment": "Bullish. High retail subscription and strong media coverage.",
+            "global_economic_trends_impacting_sector": "Favourable export environment, Indian pharma export incentives, minimal global macro headwinds."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "Issue price ₹91 (P/E post-IPO: 23.57). Somewhat aggressive, but supported by growth.",
+            "ipo_size": "₹121.03 Crore (Fresh Issue), 1.33 Crore shares.",
+            "offer_structure": "QIB: 75%, NII: 15%, Retail: 10%. Bookbuilding SME IPO.",
+            "lock_in_period_of_promoters": "Promoter holding reduces to 52.68%; standard lock-in, details not explicitly disclosed.",
+            "use_of_ipo_proceeds": "₹30.72 Cr for expansion, ₹5 Cr loan repayment, ₹43.15 Cr working capital, ₹270.3 Cr corporate purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "1.07x",
+                    "nii": "10.61x",
+                    "retail_investors": "47.26x"
+                }
+            },
+            "institutional_investor_participation": "QIB 1.07x; moderate institutional, much stronger retail/NII.",
+            "media_coverage_and_hype": "Featured in major IPO news, regular forum activity.",
+            "retail_investor_interest": "Very high—retail subscribed 47.26x."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listing Sep 3, 2025. Issue Price: ₹91. Open (NSE): ₹92; High: ₹92.5; Low: ₹90.78; Close: ₹91.73.",
+            "price_stability_and_volatility": "First day: narrow range (₹90.78–92.5), closed marginally above issue price. Steady.",
+            "trading_volume_after_listing": "Active trading, value ₹64.29 lakh on listing day (BSE/NSE summary).",
+            "post_ipo_earnings_performance": "Quarterly results awaited post-listing."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "All standard SME/mainboard approvals, filings, and compliance in place.",
+            "corporate_governance_standards": "Follows SME listing norms; DMF filings and international compliance for APIs.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Rates steady, no pharma-specific macro deterrent.",
+            "inflation_trends": "Within normal range; not flagged as sector risk.",
+            "global_market_conditions_and_foreign_fund_flows": "Positive due to India pharma push; favourable outlook."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Steady, flat to index on debut, outperforming some other SME IPOs.",
+            "support_and_resistance_levels": "Support: ₹90.78, resistance: ₹92.50 (first-day range).",
+            "momentum_indicators": "Flat to mild positive; price maintained above issue post-listing."
+        },
+        "key_takeaway": {
+            "positive": "High retail subscription + strong revenue growth + product and regulatory strengths + solid post-listing stability.",
+            "negative": "Aggressive valuation + QIB oversubscription low + profit booking in weaker macros possible."
+        }
+    },
+    {
+        "company_name": "Mangal Electrical Industries Ltd",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 22% and PAT up 126% FY24-FY25. FY25 Revenue: ₹551.39 Cr, PAT: ₹47.31 Cr. EBITDA margin FY25: 14.90%, PAT margin: 8.61%. Strong top-line and bottom-line growth.",
+            "eps_trends": "Pre-IPO EPS: ₹23.08, Post-IPO EPS: ₹17.12. PAT: FY23 ₹24.74 Cr, FY24 ₹20.95 Cr, FY25 ₹47.31 Cr.",
+            "debt_to_equity_ratio": "0.92 (moderate; improved with IPO funds).",
+            "cash_flow_strength": "Net worth and reserves increasing (FY25 net worth: ₹162.16 Cr). IPO proceeds allocate to debt reduction and capacity expansion.",
+            "business_model_and_competitive_advantage": "Manufactures transformer components (CRGO/CRNO coils, transformer cores, assemblies) and transformers for power sector. Strong brand, operational backward/forward integration, five plants in Rajasthan, large capacity & proven industry presence.",
+            "promoter_reputation_and_track_record": "Promoters: Rahul, Ashish, Saroj, Aniketa Mangal. Pre-IPO holding: 100%, post-IPO: 74.19%. Experienced leadership and sustained growth."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Power sector capex/upgrades drive strong long-term demand for transformers/components.",
+            "sector_performance_and_peer_ipo_success": "Peer electrical manufacturers have seen solid listings and post-listing stability.",
+            "market_sentiment": "Positive—multiple broker 'subscribe' ratings, good retail/NII response.",
+            "global_economic_trends_impacting_sector": "Power/electric infra is a macro priority for India; favorable capex cycle."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹561 per share. Post-IPO P/E: 32.77, Pre-IPO P/E: 24.31. Aggressive but supported by growth.",
+            "ipo_size": "₹400 Cr, Fresh issue, 71,30,124 shares.",
+            "offer_structure": "QIB: 50%, NII: 15%, Retail: 35%, Anchor: 30%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% until Sep 24, 2025, rest until Nov 23, 2025.",
+            "use_of_ipo_proceeds": "₹101.27 Cr debt repayment, ₹87.86 Cr expansion, ₹122 Cr working capital, remainder for corporate."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "11.09x",
+                    "nii": "19.78x",
+                    "retail_investors": "5.09x"
+                }
+            },
+            "institutional_investor_participation": "Strong: Anchor investors ₹120 Cr (21.39 lakh shares); QIB 11.09x.",
+            "media_coverage_and_hype": "Positive reviews, with 5 broker 'subscribe', 1 'neutral', zero 'avoid'.",
+            "retail_investor_interest": "Good participation, 5.09x subscription."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 28, 2025. Open: ₹558/₹556, High: ₹565/₹566, Low: ₹527.30/₹527.35. Last trade: ₹533.95/₹535.35.",
+            "price_stability_and_volatility": "First day range within 7% of issue price. Closed 4–5% below IPO price: mild listing pressure.",
+            "trading_volume_after_listing": "Active, with 4,84,614 traded value on debut.",
+            "post_ipo_earnings_performance": "Results awaited for post-listing period."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "All mainboard/SEBI approvals in place.",
+            "corporate_governance_standards": "Mainboard compliance, seasoned registrar/lead manager.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Rates stable, positive for capex-linked stocks.",
+            "inflation_trends": "Within normal range, no warnings for the power sector.",
+            "global_market_conditions_and_foreign_fund_flows": "Bullish FII/DII inflows to Indian industrials/electrical stocks."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "In line with peers; some post-listing dip is sector-normal.",
+            "support_and_resistance_levels": "Support: ₹527.30; Resistance: ₹565–566 (listing day range).",
+            "momentum_indicators": "Flat to mild downside: margin pressure on debut but no steep fall."
+        },
+        "key_takeaway": {
+            "positive": "Strong industry tailwinds, operational efficiency, multi-year infra demand, good subscription data and brand recall.",
+            "negative": "Aggressive valuation, declined at close vs. IPO price, potential for short/mid-term profit booking."
+        }
+    },
+    {
+        "company_name": "Patel Retail Ltd",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue rose 1% YoY (FY25: ₹825.99 Cr from ₹817.71 Cr), PAT grew 12% (FY25: ₹25.28 Cr from ₹22.53 Cr). EBITDA margin FY25: 7.61%, PAT margin: 3.08%. ROE: 19.02%, ROCE: 14.43%.",
+            "eps_trends": "Pre-IPO EPS: ₹10.16, Post-IPO EPS: ₹7.57. PAT trend (Cr): FY23 ₹16.38, FY24 ₹22.53, FY25 ₹25.28. Gradual, steady profit growth.",
+            "debt_to_equity_ratio": "1.34 (high for retail, leverage key watchpoint).",
+            "cash_flow_strength": "Net worth and reserves growing (FY25 net worth: ₹134.57 Cr). Significant working capital allocation from IPO proceeds.",
+            "business_model_and_competitive_advantage": "Supermarket chain focused in Tier-III cities with private labels, owned logistics, and integrated food processing. 43 stores (May 2025), own agri/manufacturing clusters create backward integration and supply chain advantage.",
+            "promoter_reputation_and_track_record": "Promoters: Dhanji R Patel & family. Pre-IPO holding: 97.99%, post-IPO: 70.01%. Family-managed, deep sector knowledge."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Retail sector in India is highly fragmented but fast expanding, especially in Tier-II/III regions.",
+            "sector_performance_and_peer_ipo_success": "Mixed: Organized retail stocks volatile but recent IPOs see healthy post-listing demand.",
+            "market_sentiment": "Very bullish; huge subscription and media coverage, but analyst reviews reflect caution due to competition and full pricing.",
+            "global_economic_trends_impacting_sector": "India's consumption story, retail modernization, supply chain upgrades drive positive outlook."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "Issue price ₹255. Post-IPO P/E: 33.69 (Pre-IPO: 25.1). Fully priced/expensive for retail.",
+            "ipo_size": "₹242.66 Cr (Fresh issue: ₹217.12 Cr + OFS: ₹25.54 Cr). 95.2 lakh shares.",
+            "offer_structure": "QIB ~30%, NII ~25%, Retail ~45%, Anchor ~18%. Bookbuilding reserve structure, standard mainboard split.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% ends Sep 20, 2025; rest by Nov 19, 2025.",
+            "use_of_ipo_proceeds": "₹59 Cr loan repayment, ₹115 Cr working capital, balance (~₹68.66 Cr) general corporate."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "272.14x",
+                    "nii": "108.11x",
+                    "retail_investors": "42.55x"
+                }
+            },
+            "institutional_investor_participation": "Very strong: QIB 272x, anchor ₹43.46 Cr (17.04 lakh shares) on bidding date.",
+            "media_coverage_and_hype": "Heavy media presence, five broker 'subscribe' calls, retail/social media buzz.",
+            "retail_investor_interest": "High: 42.55x subscription (retail category)."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 26, 2025. Issue Price: ₹255. Open: ₹305 (BSE)/₹300 (NSE), High: ₹305 both, Low: ₹289.75/₹285.55, Close: ₹289.75/₹287.70.",
+            "price_stability_and_volatility": "Listed at 20% premium, settled ~13% above issue. Intra-day swing ₹285.55–305.",
+            "trading_volume_after_listing": "Active trading: total traded value ₹4.1 lakh approx.",
+            "post_ipo_earnings_performance": "Post-IPO results awaited as of first week of listing."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "SEBI/mainboard compliant, no reported regulatory issues.",
+            "corporate_governance_standards": "Standard mainboard governance; disclosures per listing norms.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Stable, supportive to consumer and retail funding.",
+            "inflation_trends": "Moderate; rural/tier-3 consumption remains resilient.",
+            "global_market_conditions_and_foreign_fund_flows": "Positive global fund flows in India retail/consumption stocks."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Outperformed index on listing but matched index swings through day.",
+            "support_and_resistance_levels": "Support: ₹285.55, Resistance: ₹305 (listing day swing).",
+            "momentum_indicators": "Strong bullish momentum on debut, high trading volumes."
+        },
+        "key_takeaway": {
+            "positive": "Strong listing gains, sector tailwinds, robust investor/applicant interest, integrated supply chain.",
+            "negative": "High leverage, fully priced IPO, highly competitive/mature sector."
+        }
+    },
+    {
+        "company_name": "Vikram Solar Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue grew 37% (FY24 ₹2,523.96 Cr → FY25 ₹3,459.53 Cr); PAT up 75% (FY24 ₹79.72 Cr → FY25 ₹139.83 Cr). EBITDA margin FY25: 14.37%, PAT margin: 4.08%. ROE: 16.57%, ROCE: 24.49%.",
+            "eps_trends": "Pre-IPO EPS: ₹4.42, Post-IPO EPS: ₹3.87. PAT: FY23 ₹14.49 Cr, FY24 ₹79.72 Cr, FY25 ₹139.83 Cr. Upward earnings trajectory.",
+            "debt_to_equity_ratio": "0.19 (very low, substantially deleveraged with IPO proceeds).",
+            "cash_flow_strength": "Net worth up 179% YoY (FY25: ₹1,241.99 Cr). Reserves increased to ₹932.60 Cr, borrowings now just ₹230.67 Cr vs assets ₹2,832.15 Cr.",
+            "business_model_and_competitive_advantage": "2nd largest Indian solar PV module maker with global exports, vertically integrated operations, advanced high-efficiency panels (PERC, TOPCon, HJT). Large domestic/EPC and O&M portfolio.",
+            "promoter_reputation_and_track_record": "Promoters: Gyanesh Chaudhary & family, Vikram Capital. Pre-IPO holding: 77.64%, post-IPO: 63.11%. 20+ years industry expertise."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Massive capex tailwinds for solar, driven by India/Asia renewables targets. Government incentives, huge domestic & export orders in pipeline.",
+            "sector_performance_and_peer_ipo_success": "Sector interest high; listed peer stocks surged in recent years, though volatility exists with US/EU policy shifts.",
+            "market_sentiment": "Strong (16 broker SUBSCRIBE), but some analyst caution on high valuation and competition.",
+            "global_economic_trends_impacting_sector": "Positive global renewables push; mild risk from US tariff actions, but net bullish outlook."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹332/share. Post-IPO P/E: 85.88, Pre-IPO P/E: 75.16. Considered aggressively valued.",
+            "ipo_size": "₹2,079.37 Cr (Fresh: ₹1,500 Cr; OFS: ₹579.37 Cr), 6.26 Cr shares.",
+            "offer_structure": "QIB: 49.76%, NII: 14.93%, Retail: 34.83%, Anchor: 29.86%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% until Sep 20, 2025, rest until Nov 19, 2025.",
+            "use_of_ipo_proceeds": "₹769.73 Cr for Phase-I capex, ₹595.21 Cr Phase-II capacity, ₹49.55 Cr corporate purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "145.10x",
+                    "nii": "52.87x",
+                    "retail_investors": "7.98x"
+                }
+            },
+            "institutional_investor_participation": "Anchor ₹620.81 Cr, QIB oversubscription 145x—exceptional institutional demand.",
+            "media_coverage_and_hype": "Heavy coverage; 16 'subscribe', 2 'neutral', 0 'avoid' broker calls.",
+            "retail_investor_interest": "High: retail 7.98x, NII 52.87x, 35 lakh+ total applications."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 26, 2025. Open: ₹340/338, High: ₹381.70/381.65, Low: ₹334.05/333.65, Close: ₹356.45/356.40.",
+            "price_stability_and_volatility": "Strong debut (15% gain); intra-day swing 14%. Maintained premium over issue price.",
+            "trading_volume_after_listing": "Heavy volume: traded value ₹5.19 Cr on debut.",
+            "post_ipo_earnings_performance": "Quarterly results awaited; strong top-line growth expected ahead."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Mainboard IPO. All required SEBI, exchange, statutory approvals completed.",
+            "corporate_governance_standards": "Mainboard listing, audited disclosures, reputed lead managers.",
+            "pending_lawsuits_or_regulatory_disputes": "No material pending legal/dispute issues disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Low Indian borrowing cost is sector-supportive; global cost stable.",
+            "inflation_trends": "Favorable input trends, but watch material price swings due to global supply chain.",
+            "global_market_conditions_and_foreign_fund_flows": "Strong FII/DII flows into Indian renewables; policy support."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Outperformed broader index on debut. Sector peer comparison favorable.",
+            "support_and_resistance_levels": "Support: ₹333.65, Resistance: ₹381.70 (listing day range).",
+            "momentum_indicators": "Bullish listing, strong momentum above issue price."
+        },
+        "key_takeaway": {
+            "positive": "High institutional/anchor demand, strong sector tailwinds, revenue/profit surge, global expansion, premium listing.",
+            "negative": "Premium valuations, global solar policy/tariff risks, competition from China/EU, some analyst caution for fundamental investors."
+        }
+    },
+    {
+        "company_name": "Gem Aromatics Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 11% (FY25: ₹505.64 Cr vs FY24: ₹454.23 Cr), PAT up 7% (FY25: ₹53.38 Cr vs FY24: ₹50.10 Cr). EBITDA margin FY25: 17.55%, PAT margin: 10.56%. ROE: 18.80%, ROCE: 16.02%.",
+            "eps_trends": "Pre-IPO EPS: ₹11.39, Post-IPO EPS: ₹10.22. PAT: FY23 ₹44.67 Cr, FY24 ₹50.10 Cr, FY25 ₹53.38 Cr. Steady growth but pace moderates.",
+            "debt_to_equity_ratio": "0.78 (moderate, increased post-IPO).",
+            "cash_flow_strength": "Net worth and reserves rising (FY25 net worth: ₹283.98 Cr, reserves: ₹278.26 Cr). IPO proceeds partly to prepay debt.",
+            "business_model_and_competitive_advantage": "Top specialty ingredients maker in India (mint/clove/phenol/aroma chemicals). Wide range, proprietary R&D, strong customer retention (225 customers, 18 countries).",
+            "promoter_reputation_and_track_record": "Promoters: Vipul Parekh & family. Pre-IPO holding: 75%, post-IPO: 55.06%. 25+ years experience, reputable management."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Global demand for specialty aroma chemicals, essential oils, and value-added ingredients rising steadily.",
+            "sector_performance_and_peer_ipo_success": "Peer chemical IPOs generally successful, but sector faces stiff competition and margin sensitivity.",
+            "market_sentiment": "Positive; 9 brokers 'subscribe', 2 'neutral', no 'avoid'.",
+            "global_economic_trends_impacting_sector": "Steady; minor raw material and shipping volatility, but global preference for natural/specialty ingredients is secular."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "Issue at ₹325 per share. Post-issue P/E: 31.8, Pre-issue: 28.52. Viewed as fully priced by analysts.",
+            "ipo_size": "₹451.25 Cr (Fresh ₹175 Cr, OFS ₹276.25 Cr), 1.39 Cr shares.",
+            "offer_structure": "QIB: 50.0%, NII: 15.0%, Retail: 35.0%, Anchor: 30%.",
+            "lock_in_period_of_promoters": "Anchor 50% unlocks Sep 20, 2025; rest Nov 19, 2025.",
+            "use_of_ipo_proceeds": "₹140 Cr for debt repayment, ₹22.86 Cr corporate purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "53.76x",
+                    "nii": "45.96x",
+                    "retail_investors": "10.49x"
+                }
+            },
+            "institutional_investor_participation": "Anchor ₹135.37 Cr (41.65 lakh shares); QIB subscription 53.76x.",
+            "media_coverage_and_hype": "Wide coverage; positive broker/analyst tone.",
+            "retail_investor_interest": "Strong: 10.49x subscription, 10.6 lakh+ total applications."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 26, 2025. Issue: ₹325. BSE Open/High/Low/Close: ₹325/₹349/₹315/₹319.10. NSE Open/High/Low/Close: ₹333.10/₹349.60/₹314.65/₹319.05.",
+            "price_stability_and_volatility": "Listed flat, traded in ~10% band, closed 2% below issue. Mild listing weakness after strong subscription.",
+            "trading_volume_after_listing": "Active; traded value ₹4.6 lakh (BSE+NSE) on debut.",
+            "post_ipo_earnings_performance": "Awaited (first result post-listing pending as of Sep 2025)."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Bookbuild mainboard IPO; SEBI/NSE/BSE compliant.",
+            "corporate_governance_standards": "Listed entity, standard disclosures, reputed management.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Stable, supportive of chemical/manufacturing capex.",
+            "inflation_trends": "Manageable; risk from input costs but managed by pricing power.",
+            "global_market_conditions_and_foreign_fund_flows": "Healthy inflows; specialty chemicals attractive to global funds."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Matched peers on listing, in line with chemical sector moves.",
+            "support_and_resistance_levels": "Support: ₹314–315, Resistance: ₹349–349.60 (listing swing).",
+            "momentum_indicators": "Flat to mild negative; profit-booking expected after heavy listing subscription."
+        },
+        "key_takeaway": {
+            "positive": "Strong institutional/retail demand, top sector brand, global export base, IPO proceeds for further deleveraging.",
+            "negative": "Fully valued at issue, moderate listing, sector faces fragmentation and margin risk; cautious short-term view."
+        }
+    },
+    {
+        "company_name": "Shreeji Shipping Global Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue fell 17% YoY (FY25: ₹610.45 Cr vs FY24: ₹736.17 Cr) but PAT grew 13% (FY25: ₹141.24 Cr vs FY24: ₹124.51 Cr). EBITDA margin FY25: 33.03%, PAT margin: 23.24%. ROE: 42.91%, ROCE: 28.09%.",
+            "eps_trends": "Pre-IPO EPS: ₹9.63, Post-IPO EPS: ₹8.67. PAT: FY23 ₹118.89 Cr, FY24 ₹124.51 Cr, FY25 ₹141.24 Cr. Consistent profitability, rising PAT despite revenue dip.",
+            "debt_to_equity_ratio": "0.75 (moderate, steady leverage).",
+            "cash_flow_strength": "Net worth: ₹343.17 Cr (FY25), reserves: ₹196.55 Cr, borrowings: ₹256.47 Cr. IPO proceeds allocated in part to debt reduction.",
+            "business_model_and_competitive_advantage": "Major dry bulk shipping/logistics at 20 Indian/1 Sri Lankan port, 80+ vessels, 370+ machines, full fleet ownership, comprehensive cargo & logistics, long-term institutional client base.",
+            "promoter_reputation_and_track_record": "Promoters: Ashokkumar & Jitendra Haridas Lal. Pre-IPO holding: 100%, post-IPO: 90%. Two decades+ in sector, key management stability."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Dry bulk and private/small port services in India remain in long-term uptrend with infrastructure, coastal regulations, and import/export expansion.",
+            "sector_performance_and_peer_ipo_success": "First-mover advantage in listed Indian bulk shipping; similar logistics IPOs drew strong traction.",
+            "market_sentiment": "Positive; 9 broker SUBSCRIBE, 3 neutral, 21.92x retail subscription.",
+            "global_economic_trends_impacting_sector": "Sector tied to global commodity/shipping cycles; Indian port upgrades are positive but faces global rate volatility."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹252 per share. Post-IPO P/E: 29.07, Pre-IPO P/E: 26.16. Considered fully valued by analysts.",
+            "ipo_size": "₹410.71 Cr Fresh Issue; 1.63 Cr shares.",
+            "offer_structure": "QIB 50%, NII 15%, Retail 35%, Anchor 30%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% till Sep 20, 2025; rest till Nov 19, 2025.",
+            "use_of_ipo_proceeds": "₹251.18 Cr: Supramax vessel acquisition; ₹23.00 Cr: debt repayment; ₹95.36 Cr: corporate purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "110.41x",
+                    "nii": "72.70x",
+                    "retail_investors": "21.92x"
+                }
+            },
+            "institutional_investor_participation": "Very large: Anchor ₹123.21 Cr. QIB 110x, NII 73x.",
+            "media_coverage_and_hype": "Broad IPO attention; high analyst and forum reviews.",
+            "retail_investor_interest": "Strong: 2 million+ applications."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 26, 2025. Issue Price: ₹252. BSE/NSE Open: ₹271.85/₹270, High: ₹275, Low: ₹252.20–252.25, Close: ₹254.60/₹255.10.",
+            "price_stability_and_volatility": "Debuted 7–8% above issue, traded within 10% band, closed flat to listing.",
+            "trading_volume_after_listing": "High initial volumes, value ₹7.3 lakh on debut.",
+            "post_ipo_earnings_performance": "First post-listing result awaited."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Bookbuild IPO, BSE/NSE/SEBI compliance.",
+            "corporate_governance_standards": "Corporate board, transparent reporting, listed company standards.",
+            "pending_lawsuits_or_regulatory_disputes": "None mentioned."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Stable, supportive to asset-heavy logistics/shipping.",
+            "inflation_trends": "Manageable; global rates, fuel cost swings can impact sector.",
+            "global_market_conditions_and_foreign_fund_flows": "Positive global/institutional flows into Indian logistics assets."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "On par with logistics/infra index on debut.",
+            "support_and_resistance_levels": "Support: ₹252, Resistance: ₹275 (listing swing band).",
+            "momentum_indicators": "Flat to mild upside; some profit booking after strong subscription."
+        },
+        "key_takeaway": {
+            "positive": "First-mover-listed Indian dry-bulk shipping, high subscription, PAT growth, Supramax expansion.",
+            "negative": "Revenue contraction, fully priced, commodity/shipping cycle risks."
+        }
+    },
+    {
+        "company_name": "Regaal Resources Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 53% (FY25: ₹917.58 Cr vs FY24: ₹601.08 Cr), PAT up 115% (FY25: ₹47.67 Cr vs FY24: ₹22.14 Cr). EBITDA margin FY25: 12.32%, PAT margin: 5.19%. ROE: 20.25%, ROCE: 14.17%.",
+            "eps_trends": "Pre-IPO EPS: ₹5.80, Post-IPO EPS: ₹4.64. PAT: FY23 ₹16.76 Cr, FY24 ₹22.14 Cr, FY25 ₹47.67 Cr. Strong, consistent growth.",
+            "debt_to_equity_ratio": "2.08 (high; will reduce post-IPO as proceeds to repay debt).",
+            "cash_flow_strength": "Net worth and reserves up sharply (FY25 net worth: ₹235.41 Cr, reserve: ₹202.44 Cr). High leverage, but strong operating cash generation.",
+            "business_model_and_competitive_advantage": "Major maize processor (750 TPD), zero liquid discharge, 54-acre Bihar facility, broad portfolio (starch, flour, gluten, fibre, etc.), supply/distribution strengths, diversified clientele across food, paper, feed, adhesives.",
+            "promoter_reputation_and_track_record": "Promoters: Anil, Shruti, Karan Kishorepuria, BFL Pvt Ltd. Pre-IPO holding: 99.56%, post-IPO 70.45%. 13 brokers 'subscribe'; positive long-term track."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Steady demand for maize derivatives and food ingredients; capacity-led growth in value-added agriculture.",
+            "sector_performance_and_peer_ipo_success": "Recent peer agri-processing IPOs saw strong listing and growth.",
+            "market_sentiment": "Very bullish, heavy oversubscription.",
+            "global_economic_trends_impacting_sector": "Stable food/agri prices, minimal global headwinds—favorable outlook in India and neighborhood."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹102 per share. Post-IPO P/E: 21.98, Pre-IPO P/E: 17.58. Fully valued but justified by growth.",
+            "ipo_size": "₹306 Cr (Fresh ₹209.99 Cr, OFS ₹96 Cr); 2.99 Cr shares.",
+            "offer_structure": "QIB 50%, NII 15%, Retail 35%, Anchor 30%.",
+            "lock_in_period_of_promoters": "Anchor: 50% ends Sep 16, 2025, rest Nov 15, 2025.",
+            "use_of_ipo_proceeds": "₹159 Cr debt repayment, ₹28.14 Cr general corporate."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP often predicts strong listing gains"
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "190.96x",
+                    "nii": "356.72x",
+                    "retail_investors": "57.75x"
+                }
+            },
+            "institutional_investor_participation": "Anchor ₹91.80 Cr (90 lakh shares); QIB 191x, NII 357x.",
+            "media_coverage_and_hype": "Heavy broker support, 13 'subscribe' calls, media buzz.",
+            "retail_investor_interest": "Extraordinary: 35.6 lakh+ applications (retail 57.75x)."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 20, 2025. Issue: ₹102. BSE Open: ₹141.80, High: ₹145.70, Low: ₹130.25, Close: ₹131.65. NSE Open: ₹141.00, High: ₹145.70, Low: ₹130.25, Close: ₹131.58.",
+            "price_stability_and_volatility": "Up 39% at open; traded in ~10% band, closed 29% up; stable debut.",
+            "trading_volume_after_listing": "Heavy; traded value >₹20 lakh on debut.",
+            "post_ipo_earnings_performance": "First quarterly results awaited post listing."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "All mainboard SEBI, BSE/NSE compliance in place.",
+            "corporate_governance_standards": "Mainboard; strong disclosures; no pending litigation.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Steady; agri/food sector not strongly rate-sensitive.",
+            "inflation_trends": "Normal, maize input cost managed via capacity/location.",
+            "global_market_conditions_and_foreign_fund_flows": "FII/DII funds flowing into agri/processing, positive bias."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Outperformed sector/peers on listing.",
+            "support_and_resistance_levels": "Support: ₹130.25, Resistance: ₹145.70 (first day levels).",
+            "momentum_indicators": "Strong positive momentum, closed above issue price."
+        },
+        "key_takeaway": {
+            "positive": "Exceptional subscription and demand, strong profit/revenue growth, prominent capacity, large clients, sector-positive.",
+            "negative": "High leverage (debt/equity 2+), full/fairly valued price, cyclical agri/commodity price risks."
+        }
+    },
+    {
+        "company_name": "BlueStone Jewellery & Lifestyle Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 40% (FY25: ₹1,830.04 Cr vs FY24: ₹1,303.49 Cr), but PAT loss widened to -₹221.84 Cr (FY24: -₹142.24 Cr). EBITDA margin: 4.13%. ROE: -34.53%, ROCE: -3.67%. Persistent losses.",
+            "eps_trends": "Pre-IPO & Post-IPO EPS: negative, due to losses. PAT: FY23: -₹167.24 Cr, FY24: -₹142.24 Cr, FY25: -₹221.84 Cr. No positive EPS trend.",
+            "debt_to_equity_ratio": "0.80 (moderate for retail/jewellery, but losses mean risk is elevated).",
+            "cash_flow_strength": "Assets, reserves, and borrowing all rising (FY25 reserves: ₹877.12 Cr, borrowings: ₹728.62 Cr). IPO funds primarily for working capital.",
+            "business_model_and_competitive_advantage": "Digital-first, omni-channel jewellery retailer with 275 stores PAN India. 12,600+ PIN codes, 91 design collections, end-to-end in-house tech, strong brand recall.",
+            "promoter_reputation_and_track_record": "Founder: Gaurav Singh Kushwaha. Pre-IPO holding: 18.28%, post-IPO: 16.07%. Founder-led, strong investor backing, but loss-making track."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Indian jewellery retail is highly fragmented but growing—organized/omni-channel gaining share, especially among younger consumers.",
+            "sector_performance_and_peer_ipo_success": "Peer jewellery stocks have seen volatile post-listing performance; some successes (Titan), but generally margin pressure in competitive sector.",
+            "market_sentiment": "Cautious—analyst and forum reviews warn of losses and premium valuation.",
+            "global_economic_trends_impacting_sector": "Stable gold demand and rising diamonds; inflation can pressure margins for retailers."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹517 per share; priced at negative-EPS. Market cap: ₹7,823.26 Cr. Premium valuation despite continued losses.",
+            "ipo_size": "₹1,540.65 Cr (Fresh: ₹820 Cr, OFS: ₹720.65 Cr), 2.98 Cr shares.",
+            "offer_structure": "QIB: 75%, NII: 15%, Retail: 10%. Anchor (≈45%).",
+            "lock_in_period_of_promoters": "Anchor: 50% until Sep 12, 2025, rest until Nov 11, 2025.",
+            "use_of_ipo_proceeds": "₹750 Cr for working capital, ₹20.75 Cr corporate purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "Low/flat GMP reflects poor listing prospects; high GMP would suggest possible gains."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "4.25x",
+                    "nii": "0.57x",
+                    "retail_investors": "1.38x"
+                }
+            },
+            "institutional_investor_participation": "Anchor ₹693.29 Cr (Aug 8, 2025). QIB interest exceeds other categories but overall subscription below mainboard average.",
+            "media_coverage_and_hype": "High media attention, but brokers and forums mostly cautious; 1 avoid, 0 subscribe from analysts.",
+            "retail_investor_interest": "1.38x subscription—relatively low, signal of lukewarm demand."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 19, 2025. Issue: ₹517. Open: ₹508.80–₹510, High: ₹564, Low: ₹508.10–508.60, Close: ₹546.00 (BSE/NSE).",
+            "price_stability_and_volatility": "Opened below issue price, rebounded to 9%+ premium at close. Intra-day ~11% swing.",
+            "trading_volume_after_listing": "Active: 1,63,919 traded value (Sep 3, 2025); high for IPO.",
+            "post_ipo_earnings_performance": "Awaited—losses expected to continue near-term."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Mainboard, SEBI, BSE/NSE compliant.",
+            "corporate_governance_standards": "Strong reporting, founder-led, marquee investor board.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Rising rates could raise finance cost, negative for leveraged retailers.",
+            "inflation_trends": "Near-term retail inflation risk, but jewellery is partly a value store.",
+            "global_market_conditions_and_foreign_fund_flows": "Good FII/DII flows in retail/brand stories, but profitability may deter."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Tracked index on debut, outperformed retail peers at close.",
+            "support_and_resistance_levels": "Support: ₹508.10–508.80, Resistance: ₹564.00.",
+            "momentum_indicators": "Mildly positive; recovered through day despite muted subscription."
+        },
+        "key_takeaway": {
+            "positive": "Brand strength, omni-channel, national footprint, store expansion, digital innovation.",
+            "negative": "Consistent heavy losses, negative EPS, richest mainboard valuation, volatile sector, analyst consensus to avoid for now."
+        }
+    },
+    {
+        "company_name": "JSW Cement Ltd",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue fell 3% YoY (FY25: ₹5,914.67 Cr vs FY24: ₹6,114.60 Cr); PAT swung from ₹62.01 Cr profit (FY24) to -₹163.77 Cr loss (FY25). EBITDA margin FY25: 13.78%, PAT margin: -2.77%. ROE: -6.90%, ROCE: 7.05%.",
+            "eps_trends": "Pre-IPO EPS: -₹1.31 (negative), Post-IPO EPS: -₹1.20. PAT: FY23: ₹104.04 Cr, FY24: ₹62.01 Cr, FY25: -₹163.77 Cr. Losses despite prior profitability.",
+            "debt_to_equity_ratio": "0.98 (moderate, slightly increased post-IPO).",
+            "cash_flow_strength": "Assets: ₹12,003.94 Cr (FY25), borrowings: ₹6,166.55 Cr. Net worth: ₹2,352.55 Cr; plan for significant capex and debt reduction from IPO proceeds.",
+            "business_model_and_competitive_advantage": "Manufacturer of green cement; fastest capacity and sales growth among peers; 20.6 MMTPA capacity, extensive dealer/distribution, focus on sustainability, lowest CO2 emission intensity.",
+            "promoter_reputation_and_track_record": "Promoters: Sajjan Jindal & family. Pre-IPO holding: 78.61%, post-IPO: 72.33%. JSW Group lineage, long industry standing."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Large capex/infrastructure push, meaningful national demand for cement forecast.",
+            "sector_performance_and_peer_ipo_success": "Cement IPOs are well-subscribed, but cyclical and high competition affects post-listing performance.",
+            "market_sentiment": "Mixed; 7 brokers 'subscribe', 1 'neutral'. Retail subscription lukewarm, QIB/NII higher.",
+            "global_economic_trends_impacting_sector": "Capex cycle strong, some margin risk from global fuel/coal swings."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹147 per share; P/E negative due to loss in FY25. Price/book: 6.16x (high), market cap at ₹20,041.46 Cr.",
+            "ipo_size": "₹3,600 Cr (Fresh ₹1,600 Cr, OFS ₹2,000 Cr), 24.5 Cr shares.",
+            "offer_structure": "QIB 50%, NII 15%, Retail 35%, Anchor 30%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% expires Sep 10, 2025, rest Nov 9, 2025.",
+            "use_of_ipo_proceeds": "₹800 Cr capex (Nagaur, Rajasthan), ₹520 Cr debt repayment, ₹226.80 Cr corporate."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "Low/flat GMP—listing gains not assured due to recent losses."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "16.71x",
+                    "nii": "11.60x",
+                    "retail_investors": "1.91x"
+                }
+            },
+            "institutional_investor_participation": "Anchor investors: ₹1,080 Cr; strong QIB/NII (overall 8.22x, QIB 16.71x, retail 1.91x).",
+            "media_coverage_and_hype": "Wide coverage; 7 broker 'subscribe', 1 'neutral' call—cautions on valuation/loss.",
+            "retail_investor_interest": "Modest—only 1.91x subscription (retail); stronger in institutions."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 14, 2025. Open: ₹153.00/153.50, High: ₹154.70/154.77, Low: ₹145.05, Close: ₹146.05/146.07 (near issue).",
+            "price_stability_and_volatility": "Stable debut, traded in tight 7% range, closed slightly below issue price.",
+            "trading_volume_after_listing": "Very active; traded value ₹2.33 Cr on debut.",
+            "post_ipo_earnings_performance": "Results awaited; losses expected to persist near term."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Mainboard, all SEBI/NSE/BSE compliance met.",
+            "corporate_governance_standards": "Strong group-level governance, high-profile board.",
+            "pending_lawsuits_or_regulatory_disputes": "None flagged in disclosures."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Moderately rising, could pressure cement margins.",
+            "inflation_trends": "Input/fuel-related margin risk, but infra-led demand supports sales.",
+            "global_market_conditions_and_foreign_fund_flows": "Strong FII/DII flows in infrastructure stocks, positive bias."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Matched/no outperformance on debut.",
+            "support_and_resistance_levels": "Support: ₹145.05; Resistance: ₹154.70–154.77.",
+            "momentum_indicators": "Flat; muted post-listing, slight downside bias."
+        },
+        "key_takeaway": {
+            "positive": "Top-three growth in sector, green focus, strong promoter, institutional trust, capex for expansion.",
+            "negative": "Negative earnings, high price/book, listing at par, mixed sentiment, short-term lack of profitability."
+        }
+    },
+    {
+        "company_name": "All Time Plastics Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 8% (FY25: ₹559.24 Cr vs FY24: ₹515.88 Cr), PAT up 6% (FY25: ₹47.29 Cr vs FY24: ₹44.79 Cr). EBITDA margin FY25: 18.16%, PAT margin: 8.46%. ROE: 19.01%, ROCE: 16.99%.",
+            "eps_trends": "Pre-IPO EPS: ₹8.55, Post-IPO EPS: ₹7.22. PAT: FY23: ₹28.27 Cr, FY24: ₹44.79 Cr, FY25: ₹47.29 Cr. Continuous upward trend.",
+            "debt_to_equity_ratio": "0.88 (sector typical, partly reduced with IPO proceeds).",
+            "cash_flow_strength": "Net worth and reserves up (FY25 net worth: ₹249.13 Cr). Cash flow supported by strong exports and premium client base.",
+            "business_model_and_competitive_advantage": "Leading plastic houseware exporter (85%+ revenue from exports), strong ties with IKEA, Tesco, Asda. 1,800+ SKUs across eight categories. In-house design and integrated manufacturing strengths.",
+            "promoter_reputation_and_track_record": "Promoters: Shah family (Kailesh, Bhupesh, Nilesh). Pre-IPO holding: 90.98%, post-IPO: 70.15%. Multidecade experience, established relationships."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Large growth runway for Indian plastic houseware exports, rising international demand, established global supply chains.",
+            "sector_performance_and_peer_ipo_success": "Industry peers listed on SME/mainboard show stable financials and post-listing performance.",
+            "market_sentiment": "Positive; 6 broker 'subscribe', 1 neutral; high anchor/QIB/NII demand.",
+            "global_economic_trends_impacting_sector": "Stable international logistics, growing preference for sustainable and branded consumer goods."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹275 per share. Post-IPO P/E: 38.09, Pre-IPO P/E: 32.17. Considered fully priced.",
+            "ipo_size": "₹400.60 Cr (Fresh: ₹280.03 Cr, OFS: ₹120.57 Cr); 1.46 Cr shares.",
+            "offer_structure": "QIB: 49.88%, NII: 14.96%, Retail: 34.91%, Anchor: 29.93%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% until Sep 10, 2025; rest until Nov 9, 2025.",
+            "use_of_ipo_proceeds": "₹143 Cr debt repayment, ₹113.71 Cr for machinery, ₹0.4 Cr corporate."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "Strong GMP signals active demand; steady demand likely to continue post-listing."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "10.30x",
+                    "nii": "14.01x",
+                    "retail_investors": "5.36x"
+                }
+            },
+            "institutional_investor_participation": "Anchor: ₹119.91 Cr (43.6 lakh shares); QIB 10.30x. Strong institutional response.",
+            "media_coverage_and_hype": "Steady coverage; positive broker/analyst reviews.",
+            "retail_investor_interest": "Robust: 5.36x subscription, 4.44 lakh+ total applications."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 14, 2025. Issue: ₹275. BSE/NSE Open: ₹314.30/311.30, High: ₹322.15/325.00, Low: ₹280.80/280.65, Last Trade: ₹283.25/283.30.",
+            "price_stability_and_volatility": "Listed 14% above IPO price, traded in 15% range, settled 3% above issue.",
+            "trading_volume_after_listing": "Active; high traded volume (>7 lakh aggregate).",
+            "post_ipo_earnings_performance": "First quarterly result pending (as of Sep 2025); continued export orders."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Mainboard, SEBI/NSE/BSE compliant.",
+            "corporate_governance_standards": "Standard listed company disclosures and compliance.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Rates broadly steady; no notable negative for sector.",
+            "inflation_trends": "Input costs manageable; pass-through to clients. Revenue resilience evident.",
+            "global_market_conditions_and_foreign_fund_flows": "Healthy export flows and foreign demand for Indian houseware."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Superior; outperformed peers on debut, steady post-listing.",
+            "support_and_resistance_levels": "Support: ₹280.65–280.80; Resistance: ₹322.15–325.00.",
+            "momentum_indicators": "Bullish momentum on listing, mild cooling but range-bound trend."
+        },
+        "key_takeaway": {
+            "positive": "High export share, anchor/QIB demand, steady growth, sector resilience, low-labor cost competitive edge.",
+            "negative": "Fully valued IPO, input cost risk, global macro/forex exposures."
+        }
+    },
+    {
+        "company_name": "Knowledge Realty Trust",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 16% (FY25: ₹4,146.86 Cr vs FY24: ₹3,588.48 Cr); PAT down 34% (FY25: ₹222.52 Cr vs FY24: ₹339.66 Cr). EBITDA margin strong: ₹3,293.03 Cr in FY25. High asset base, stable rent collections.",
+            "eps_trends": "PAT: FY23 ₹219.24 Cr, FY24 ₹339.66 Cr, FY25 ₹222.52 Cr. Profitable, but earnings dipped FY25 due to one-off costs/slower leasing.",
+            "debt_to_equity_ratio": "High leverage but common in REITs; borrowings: ₹19,792.17 Cr (FY25). Asset backing mitigates risk.",
+            "cash_flow_strength": "Consistently high EBITDA, stabilized lease cash flows. Largest office REIT (GAV ₹61,999 Cr); robust rental income.",
+            "business_model_and_competitive_advantage": "Largest Indian office REIT, 30 Grade-A offices, 46.3 msf portfolio, 91.4% committed occupancy. Diversified, prime-city tenant base (incl. Fortune 500, GCCs, corporates). Amenities-rich, supported by Blackstone/Sattva.",
+            "promoter_reputation_and_track_record": "Promoters: Blackstone, Sattva. Global expertise, large-scale asset management, industry leadership."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Premium asset office leasing stable. Favourable long-term demand for IT/business parks in Tier 1 cities.",
+            "sector_performance_and_peer_ipo_success": "Existing REITs (Embassy, Brookfield, Mindspace) show good listing, post-IPO yield and NAV appreciation.",
+            "market_sentiment": "Positive—large anchor/QIB allocation, good coverage, 4/4 broker subscribe.",
+            "global_economic_trends_impacting_sector": "Global hybrid/workplace transition impacts office demand, but India market robust. Low global interest rates support asset values."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹100 per unit. NAV: ₹321.7 per unit (Mar 25), implying strong asset coverage.  FY25 yield ~5.6–6%.",
+            "ipo_size": "₹4,800 Cr (Fresh issue, 48 Cr units).",
+            "offer_structure": "QIB ≤75%, NII ≥25%; Anchor ~35%.",
+            "lock_in_period_of_promoters": "Anchor: 50% unlock Sep 11, 2025; rest Nov 10, 2025.",
+            "use_of_ipo_proceeds": "₹4,640 Cr for SPV/debt repayment; balance general purposes. Reduces leverage, frees up cash flow for distributions."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "GMP near par pre-listing; REITs tend to trade close to NAV."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "0.74x",
+                    "nii": "3.91x",
+                    "retail_investors": "Data not provided (implies NII/Anchor dominant)"
+                }
+            },
+            "institutional_investor_participation": "Anchor: ₹1,620 Cr; strong institutional/QIB allocations.",
+            "media_coverage_and_hype": "Good coverage; 4 broker subscribe, no avoid/neutral calls.",
+            "retail_investor_interest": "Moderate; REITs typically attract more HNI/institutional than small retail."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 18, 2025. Issue: ₹100/unit. BSE Open: ₹104, High: ₹109.14, Low: ₹103.10, Last: ₹106.18.",
+            "price_stability_and_volatility": "Opened +4%, hit 9% listing premium, closed +6%. Yield remains in expected range.",
+            "trading_volume_after_listing": "Strong debut turnover (specific volume not disclosed).",
+            "post_ipo_earnings_performance": "First quarterly REIT yield/distribution awaited post-listing."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "All SEBI/REIT mainboard rules followed.",
+            "corporate_governance_standards": "REIT-standard disclosures, Blackstone sponsor governance.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Low rates globally and steady India rates support real asset pricing.",
+            "inflation_trends": "Rent/Escalation provisions help counter rising costs; stable normalized yields.",
+            "global_market_conditions_and_foreign_fund_flows": "Foreign inflows strong in Indian REITs. Global real asset allocation positive."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Outperformed other REITs and Nifty Realty on listing.",
+            "support_and_resistance_levels": "Support: ₹103.10. Resistance: ₹109.14 (listing day range).",
+            "momentum_indicators": "Steady, mild positive trend; listed above issue, NAV underpinning."
+        },
+        "key_takeaway": {
+            "positive": "Largest, diversified REIT, institutional trust, high-quality assets, stable occupancy/yields, Blackstone backing.",
+            "negative": "High debt (though reducing), earnings volatility possible, moderate yield vs. equity."
+        }
+    },
+    {
+        "company_name": "Highway Infrastructure Ltd",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue fell 13% (FY25: ₹504.48 Cr vs FY24: ₹576.58 Cr), PAT up 5% (FY25: ₹22.40 Cr vs FY24: ₹21.41 Cr). EBITDA margin FY25: 6.32%, PAT margin: 4.44%. ROE: 19.03%, ROCE: 16.56%.",
+            "eps_trends": "Pre-IPO EPS: ₹3.88, Post-IPO EPS: ₹3.12. PAT: FY23 ₹13.80 Cr, FY24 ₹21.41 Cr, FY25 ₹22.40 Cr. Consistent profit growth despite revenue dip.",
+            "debt_to_equity_ratio": "0.61 (moderate, manageable infrastructure leverage).",
+            "cash_flow_strength": "Net worth (FY25): ₹117.72 Cr, reserves: ₹83.90 Cr. Steady asset and reserve build-up; moderate debt.",
+            "business_model_and_competitive_advantage": "Infra developer in roads/highways/bridges, toll collection (ANPR/ETC tech), EPC, small real estate. Pan-India presence, in-house execution, 7 active tollway projects, 20 EPC projects ongoing.",
+            "promoter_reputation_and_track_record": "Promoters: Arun Kumar Jain, Anoop Agrawal, Riddharth Jain. Pre-IPO holding: 94.95%, post-IPO: 70.04%. Established, sectoral experience."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "High government focus on roads/highways drives construction order flow and long-term sector demand.",
+            "sector_performance_and_peer_ipo_success": "Peer infra IPOs well-subscribed; sector steady, benefits from ongoing infra push.",
+            "market_sentiment": "Positive: 1 broker 'subscribe', 1 'neutral'. High retail/NII subscription.",
+            "global_economic_trends_impacting_sector": "Stable, with healthy infra capex in India. Limited direct global exposure."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹70 per share. Post-IPO P/E: 22.41, Pre-IPO P/E: 18.06. Fair to moderately aggressive valuation.",
+            "ipo_size": "₹130 Cr (Fresh: ₹97.52 Cr, OFS: ₹32.48 Cr), 1.86 Cr shares.",
+            "offer_structure": "QIB: 30%, NII: 30%, Retail: 40%, Anchor: 18%.",
+            "lock_in_period_of_promoters": "Anchor: 50% unlock Sep 7, 2025, rest Nov 6, 2025.",
+            "use_of_ipo_proceeds": "₹65 Cr for working capital, ₹32.52 Cr corporate."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP reliably signals strong listing gains."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "6.46x",
+                    "nii": "89.10x",
+                    "retail_investors": "70.45x"
+                }
+            },
+            "institutional_investor_participation": "Strong: ₹23.4 Cr anchor (18%); QIB 6.46x. Heavy NII/retail demand.",
+            "media_coverage_and_hype": "Active; core infra forums, good broker/member sentiment.",
+            "retail_investor_interest": "Very strong: 70.45x; 19 lakh+ applications."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 12, 2025. Issue: ₹70. BSE/NSE Open: ₹117/115, High: ₹122.84/120.75, Low: ₹116/115, Last: ₹122.84/120.75.",
+            "price_stability_and_volatility": "Listed 65% above IPO, closed at day’s high. Strong momentum.",
+            "trading_volume_after_listing": "High; ₹7.8 lakh traded on listing.",
+            "post_ipo_earnings_performance": "First quarter results post-listing awaited."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "SEBI, BSE/NSE compliant, bookbuild IPO.",
+            "corporate_governance_standards": "Standard listed company practices.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Stable rates, manageable for infra; positive for new projects.",
+            "inflation_trends": "Minor cost risk, but mitigated by government infra demand.",
+            "global_market_conditions_and_foreign_fund_flows": "Healthy FII/DII flows to Indian infra."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Outperformed infra index/peers on listing.",
+            "support_and_resistance_levels": "Support: ₹115–116, Resistance: ₹120.75–122.84.",
+            "momentum_indicators": "Strong upward on listing, closing at top end."
+        },
+        "key_takeaway": {
+            "positive": "Highly oversubscribed, strong listing, established infra order book, robust sector tailwinds.",
+            "negative": "Revenue contraction in FY25, moderate margins, full valuation."
+        }
+    },
+    {
+        "company_name": "National Securities Depository Limited (NSDL)",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 12% (FY25: ₹1,535.19 Cr vs FY24: ₹1,365.71 Cr), PAT up 25% (FY25: ₹343.12 Cr vs FY24: ₹275.45 Cr). EBITDA margin: 23.95%, PAT margin: 22.35%. ROE: 17.11%, ROCE: 22.7%.",
+            "eps_trends": "Pre-IPO EPS: ₹17.16. PAT: FY23: ₹234.81 Cr, FY24: ₹275.45 Cr, FY25: ₹343.12 Cr. Consistent earnings growth trend.",
+            "debt_to_equity_ratio": "Very low (essentially debt-free).",
+            "cash_flow_strength": "High cash flow, consistent dividends (50% payout FY23, FY24), net worth FY25: ₹2,005.34 Cr. Large recurring revenue component, stable cash generation.",
+            "business_model_and_competitive_advantage": "India’s first and largest depository, leader in digital securities infrastructure, technology innovation, recurring fee model from 39.45M+ demat accounts, pan-India and global presence.",
+            "promoter_reputation_and_track_record": "SEBI-registered Market Infrastructure Institution (MII), experienced management, established leader."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Huge securities/wealth formalization tailwind, digitization, rising retail and FPI/DII flows. Defensive business model.",
+            "sector_performance_and_peer_ipo_success": "Peer CDSL performed strongly post-listing; market rewards quality platforms.",
+            "market_sentiment": "Very bullish—11 broker 'subscribe', heavy anchor and QIB flows, large application count.",
+            "global_economic_trends_impacting_sector": "Indian financialization outpaces global norm; global capital market resilience supportive."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹800 per share; P/E (post-IPO) 46.63. Price/book 7.98. Considered fully valued, but justified by growth and asset-light model.",
+            "ipo_size": "₹4,010.95 Cr (OFS; no fresh issue), 5.01 Cr shares.",
+            "offer_structure": "QIB 49.92%, NII 14.97%, Retail 34.94%, Anchor 29.95%. Employee, anchor and all standard splits.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% Sep 2, 2025; rest Nov 1, 2025.",
+            "use_of_ipo_proceeds": "OFS—no proceeds to company. Listing carries brand/visibility benefit."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "Strong pre-listing GMP, strong listing anticipated and delivered."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "103.97x",
+                    "nii": "34.98x",
+                    "retail_investors": "7.76x"
+                }
+            },
+            "institutional_investor_participation": "Heavy: Anchor ₹1,201.44 Cr; QIB 104x.",
+            "media_coverage_and_hype": "Wide/bullish. 11 broker 'subscribe', positive reviews/media.",
+            "retail_investor_interest": "Intense: 51.99 lakh+ applications, 7.76x retail subscription."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 6, 2025. IPO: ₹800. BSE Open: ₹880, High: ₹943.85, Low: ₹880, Last: ₹936.",
+            "price_stability_and_volatility": "Listed 10%+ above issue, closed 17% up, traded 8% band.",
+            "trading_volume_after_listing": "Very high: ₹29.7 lakh value on BSE debut.",
+            "post_ipo_earnings_performance": "Strong earnings continue; dividend payout likely to remain robust."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "SEBI, BSE mainboard-compliant MII.",
+            "corporate_governance_standards": "Regulatory board, strong transparency, robust cyber/IT/compliance.",
+            "pending_lawsuits_or_regulatory_disputes": "None reported."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Low rate regime favours financialization, stable sector returns.",
+            "inflation_trends": "Low cost/inflation risk, strong margin resilience.",
+            "global_market_conditions_and_foreign_fund_flows": "Heavy FPI/DII/retail flows drive sector growth."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Strong outperformance of index and CDSL peer on debut.",
+            "support_and_resistance_levels": "Support: ₹880; Resistance: ₹943.85 (listing range).",
+            "momentum_indicators": "Bullish; strong momentum, high demand."
+        },
+        "key_takeaway": {
+            "positive": "High demand, digital platform, dominant market position, recurring revenues, zero debt, steady growth/dividends.",
+            "negative": "Fully priced, competitive threat from CDSL/tech; OFS means no funds to NSDL."
+        }
+    },
+    {
+        "company_name": "M&B Engineering Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue grew 23% (FY25: ₹996.89 Cr vs FY24: ₹808.26 Cr), PAT up 69% (FY25: ₹77.05 Cr vs FY24: ₹45.63 Cr). EBITDA margin FY25: 12.78%, PAT margin: 7.73%. ROE: 25.13%, ROCE: 24.80%.",
+            "eps_trends": "Pre-IPO EPS: ₹15.41, Post-IPO EPS: ₹13.48. PAT: FY23: ₹32.89 Cr, FY24: ₹45.63 Cr, FY25: ₹77.05 Cr. Upward trend.",
+            "debt_to_equity_ratio": "0.33 (low, conservative for sector/company size).",
+            "cash_flow_strength": "Net worth: ₹306.53 Cr (FY25), reserves: ₹256.53 Cr. High cash flow from 9500+ executed projects and exports to 22 countries.",
+            "business_model_and_competitive_advantage": "Pre-engineered buildings, structural steel, self-supported steel roofing. Two large manufacturing plants, diversified (Phenix/Proflex), advanced on-site erection, 103,800 MTPA PEB capacity, large order book, global presence.",
+            "promoter_reputation_and_track_record": "Promoters: Patel family (Girishbhai, Chirag, et al.). Pre-IPO holding: 100%, post-IPO: 70.45%. Long-established sector reputation."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "High infra/manufacturing capex in India, export demand strengthening, growing shift to pre-engineered steel structures.",
+            "sector_performance_and_peer_ipo_success": "Peers show steady returns post-IPO in structural steel/building solutions.",
+            "market_sentiment": "Strong—10 brokers 'subscribe', 2 neutral. Heavy NII/QIB/retail bids.",
+            "global_economic_trends_impacting_sector": "Supportive public/private capex, minor input cost volatility managed through order pipeline."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹385/share. Post-IPO P/E: 28.55, Pre-IPO P/E: 24.98. Slightly aggressive, but justified by growth.",
+            "ipo_size": "₹650 Cr (Fresh ₹275.12 Cr, OFS ₹374.88 Cr), 1.69 Cr shares.",
+            "offer_structure": "QIB: 74.75%, NII: 14.95%, Retail: 9.97%, Anchor: 44.85%, Employees: 0.34%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% till Sep 2, 2025; rest till Nov 1, 2025.",
+            "use_of_ipo_proceeds": "₹130.58 Cr equipment, ₹5.20 Cr IT, ₹58.75 Cr debt, ₹80.47 Cr general purposes."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "Strong pre-listing GMP; indicates good listing gains possible."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "38.63x",
+                    "nii": "40.22x",
+                    "retail_investors": "34.36x"
+                }
+            },
+            "institutional_investor_participation": "Anchor: ₹291.6 Cr; QIB 38.63x; NII 40.22x. Broad institutional and HNI demand.",
+            "media_coverage_and_hype": "Wide; 10 brokers 'subscribe', strong forum and investor buzz.",
+            "retail_investor_interest": "Exceptional: 14.2 lakh+ applications, 34.36x retail subscription."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 6, 2025. Issue: ₹385. BSE/NSE Open: ₹386/385, High: ₹418.85/418.80, Low: ₹373.25/373.50, Last Trade: ₹409.15/408.65.",
+            "price_stability_and_volatility": "Listed near issue, high intra-day swing, closed +6% above IPO price.",
+            "trading_volume_after_listing": "Very active; 10.8 lakh traded value on BSE alone.",
+            "post_ipo_earnings_performance": "First result awaited; momentum supported by strong order book."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Mainboard, SEBI/BSE/NSE compliant, RHP/DRHP filings available.",
+            "corporate_governance_standards": "Standard listed company practices, lead managers Equirus/DAM.",
+            "pending_lawsuits_or_regulatory_disputes": "None flagged."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Low leverage, interest rates not major risk.",
+            "inflation_trends": "Input cost (steel, cement) volatility managed through contracts.",
+            "global_market_conditions_and_foreign_fund_flows": "Positive public and foreign infrastructure investment trends."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Strong performance, solid listing, outperformed infra/PEB peer set on debut.",
+            "support_and_resistance_levels": "Support: ₹373.25–373.50, Resistance: ₹418.80–418.85.",
+            "momentum_indicators": "Bullish trend on listing, high volumes, +6% day close."
+        },
+        "key_takeaway": {
+            "positive": "Top sector position, global/export client base, low leverage, robust order book, strong listing, positive investor sentiment.",
+            "negative": "Inconsistent revenue trend across years, aggressive pricing, cyclical infra exposure."
+        }
+    },
+    {
+        "company_name": "Sri Lotus Developers & Realty Ltd.",
+        "company_fundamentals": {
+            "revenue_growth_and_profitability": "Revenue up 22% (FY25: ₹569.28 Cr vs FY24: ₹466.19 Cr), PAT up 91% (FY25: ₹227.89 Cr vs FY24: ₹119.14 Cr). EBITDA margin FY25: 52.57%, PAT margin: 41.46%. ROE: 24.39%, ROCE: 27.22%.",
+            "eps_trends": "Pre-IPO EPS: ₹5.23, Post-IPO EPS: ₹4.66. PAT: FY23: ₹16.80 Cr, FY24: ₹119.14 Cr, FY25: ₹227.89 Cr. Explosive profit growth post-FY23.",
+            "debt_to_equity_ratio": "0.13 (very low; highly asset-light balance sheet).",
+            "cash_flow_strength": "Net worth: ₹932.44 Cr (FY25), reserves: ₹888.93 Cr. Cash flows robust, asset-light model provides ample liquidity.",
+            "business_model_and_competitive_advantage": "Ultra-luxury/luxury residential and commercial redeveloper, western Mumbai focus, asset-light (development agreements, not ownership), high cash conversion, premium brand, quick sales cycles.",
+            "promoter_reputation_and_track_record": "Promoters: Anand, Roopa, Ashka Pandit. Pre-IPO holding: 91.78%, post-IPO: 81.86%. Reputation backed by strong pre-IPO anchor/celebrity investors."
+        },
+        "industry_market_conditions": {
+            "industry_growth_potential": "Luxury/ultra-luxury Mumbai real estate in structural upcycle, limited premium inventory.",
+            "sector_performance_and_peer_ipo_success": "Peers benefitted post-listing in bullish market; Mumbai luxury stays robust.",
+            "market_sentiment": "Extremely bullish—18 broker subscribe, bidding at all-time high, celebrity/anchor backing.",
+            "global_economic_trends_impacting_sector": "Luxury demand resilient to global macro risk; India domestic demand anchors."
+        },
+        "ipo_specific_factors": {
+            "issue_price_vs_valuation": "₹150/share. Post-IPO P/E: 32.17, Pre-IPO P/E: 28.69. Price/book: 7.01. Considered fully priced.",
+            "ipo_size": "₹792 Cr, 5.28 Cr shares (Fresh Issue only).",
+            "offer_structure": "QIB: 49.86%, NII: 14.96%, Retail: 34.90%, Anchor: 29.92%, Employees: 0.28%.",
+            "lock_in_period_of_promoters": "Anchor lock-in: 50% till Sep 2, 2025, rest till Nov 1, 2025.",
+            "use_of_ipo_proceeds": "₹550 Cr to subsidiaries for project funding, ₹182.29 Cr general corporate."
+        },
+        "investor_market_sentiment": {
+            "grey_market_premium": {
+                "description": "Shows aftermarket demand before listing",
+                "prediction_insights": "High GMP, massive bids signal demand strength and listing gain potential."
+            },
+            "subscription_rate": {
+                "description": "Oversubscription indicates high demand",
+                "analysis": {
+                    "qib": "175.61x",
+                    "nii": "61.82x",
+                    "retail_investors": "21.77x"
+                }
+            },
+            "institutional_investor_participation": "Big: anchor ₹237 Cr (1.58 Cr shares), QIB 176x.",
+            "media_coverage_and_hype": "Extremely high; 18 broker subscribe, media/celebrity buzz.",
+            "retail_investor_interest": "Strongest—34.8 lakh+ applications, 21.77x subscription."
+        },
+        "post_ipo_performance": {
+            "listing_day_performance": "Listed Aug 6, 2025. Issue: ₹150. BSE/NSE Open: ₹179.10/178.00, High: ₹197.00/195.80, Low: ₹176.60/176.70, Close: ₹196.85/195.67.",
+            "price_stability_and_volatility": "Listed 19% above issue; day’s range ~11%; closed 31% up.",
+            "trading_volume_after_listing": "Huge: ₹39.8 lakh turnover, high demand.",
+            "post_ipo_earnings_performance": "Upcoming; growth trend expected to continue."
+        },
+        "regulatory_legal_factors": {
+            "sebi_approvals_and_compliance": "Mainboard SEBI-compliant; Motilal Oswal/MNC lead managers.",
+            "corporate_governance_standards": "Strong reporting/disclosure, high-profile board.",
+            "pending_lawsuits_or_regulatory_disputes": "None disclosed."
+        },
+        "macro_economic_factors": {
+            "interest_rates": "Low rate (coverage, light leverage) reduces risk.",
+            "inflation_trends": "Premium pricing, limited impact; high-margin luxury segment insulated.",
+            "global_market_conditions_and_foreign_fund_flows": "India real estate attractive, FII/celebrity/anchor participation."
+        },
+        "technical_market_indicators": {
+            "relative_performance_to_sector_index": "Massive outperformance of realty index, peer group.",
+            "support_and_resistance_levels": "Support: ₹176.60–176.70; Resistance: ₹197.00–195.80.",
+            "momentum_indicators": "Top-class uptrend, momentum reinforced by anchor/celebrity/retail volume."
+        },
+        "key_takeaway": {
+            "positive": "Explosive earnings growth, asset-light, massive GMP/subscription, luxury segment upcycle, benchmark listing.",
+            "negative": "Fully priced; luxury demand, Mumbai-only exposure—cyclical risk if real estate slows."
+        }
+    }
+]

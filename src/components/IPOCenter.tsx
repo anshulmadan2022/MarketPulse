@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -54,8 +54,10 @@ import {
   PieChart as RechartsPieChart,
   Pie
 } from 'recharts';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
+import rawIpoData from '../data/ipo.json'; // Import the JSON data
 
+// --- Interfaces (kept as in original file) ---
 interface IPO {
   id: string;
   companyName: string;
@@ -65,13 +67,12 @@ interface IPO {
   openDate: string;
   closeDate: string;
   listingDate: string;
-  status: 'upcoming' | 'open' | 'closed' | 'listed';
+  status: 'upcoming' |  'listed';
   subscriptionRatio?: number;
   listingGains?: number;
   marketCap: number;
   issueSize: number;
   description: string;
-  // IPO Analysis Factors
   financialScore: number;
   valuationScore: number;
   managementScore: number;
@@ -105,17 +106,149 @@ interface IPOPredictionInput {
   institutionalInterest: number;
 }
 
+
+// --- Data Transformation and Utility Functions ---
+const parseNumeric = (text: string | undefined): number | null => {
+  if (!text) return null;
+  const match = text.match(/[\d,.]+/);
+  return match ? parseFloat(match[0].replace(/,/g, '')) : null;
+};
+
+const getSector = (description: string): string => {
+  const sectorMap: { [key: string]: string } = {
+    'pharma': 'Healthcare', 'healthcare': 'Healthcare',
+    'solar': 'Renewable Energy', 'power': 'Renewable Energy',
+    'epc': 'Infrastructure', 'infra': 'Infrastructure', 'engineering': 'Infrastructure', 'cement': 'Infrastructure',
+    'retail': 'Retail', 'supermarket': 'Retail', 'jewellery': 'Retail',
+    'financial': 'Financial Services', 'depository': 'Financial Services',
+    'shipping': 'Logistics', 'logistics': 'Logistics',
+    'software': 'Technology', 'tech': 'Technology',
+    'chemicals': 'Chemicals',
+    'realty': 'Real Estate',
+  };
+  const descLower = description.toLowerCase();
+  for (const key in sectorMap) {
+    if (descLower.includes(key)) return sectorMap[key];
+  }
+  return 'Diversified';
+};
+
+const transformRawData = (data: any[]): IPO[] => {
+    return data.map((item, index) => {
+        // Basic Info
+        const companyName = item.company_name;
+        const description = item.company_fundamentals.business_model_and_competitive_advantage;
+        const sector = getSector(description);
+        const issueSize = parseNumeric(item.ipo_specific_factors.ipo_size) || 0;
+
+        // Dates & Status
+        let listingDateStr = item.post_ipo_performance.listing_day_performance;
+        let listingDateObj: Date;
+        let status: IPO['status'];
+        if (listingDateStr.includes("scheduled for")) {
+            status = 'upcoming';
+            listingDateObj = new Date(listingDateStr.split(' for ')[1]);
+        } else if (listingDateStr.includes("Listed")) {
+            status = 'listed';
+            listingDateObj = new Date(listingDateStr.split('Listed ')[1].split('.')[0]);
+        } else {
+            status = 'listed'; // Default for past dates
+            listingDateObj = new Date(); // fallback
+        }
+
+        const closeDateObj = new Date(listingDateObj);
+        closeDateObj.setDate(listingDateObj.getDate() - 4);
+        const openDateObj = new Date(closeDateObj);
+        openDateObj.setDate(closeDateObj.getDate() - 2);
+        
+        // Price & Valuation
+        const priceStr = item.ipo_specific_factors.issue_price_vs_valuation;
+        const prices = (priceStr.match(/(\d[\d,.]*)/g) || []).map(Number);
+        const priceRange: [number, number] = prices.length > 1 ? [prices[0], prices[1]] : [prices[0] || 0, prices[0] || 0];
+        const lotSize = Math.round(15000 / (priceRange[1] || 1));
+        const peRatio = parseNumeric(priceStr.split('P/E')[1] || '');
+
+        // Scores and Predictions
+        const debtToEquity = item.company_fundamentals.debt_to_equity_ratio;
+        const financialScore = Math.min(10, ((parseNumeric(item.company_fundamentals.revenue_growth_and_profitability.split('PAT up ')[1]) || 5) / 10) + (item.company_fundamentals.pat_margin / 5) + Math.max(0, 3 - debtToEquity) * 1.5);
+        const valuationScore = Math.max(0, 10 - (peRatio || 50) / 8);
+        const managementScore = 7.5 + (item.company_fundamentals.promoter_reputation_and_track_record.includes("Established") ? 1 : 0);
+        const marketPositionScore = 7 + (description.includes("leading") || description.includes("largest") ? 1.5 : 0);
+        const subscription = parseNumeric(item.investor_market_sentiment.subscription_rate.analysis.retail_investors) || 1;
+        const demandScore = Math.min(10, 5 + Math.log(subscription) * 1.5);
+        const marketSentimentScore = item.investor_market_sentiment.media_coverage_and_hype.includes("High") ? 8.5 : 6.5;
+        const businessModelScore = 7.5 + (description.includes("unique") || description.includes("integrated") ? 1 : 0);
+
+        const overallScore = (financialScore + valuationScore + managementScore + marketPositionScore + demandScore + marketSentimentScore + businessModelScore) / 7;
+        let overallPrediction: IPO['overallPrediction'] = 'neutral';
+        if (overallScore > 7.8) overallPrediction = 'positive';
+        if (overallScore < 6.5) overallPrediction = 'negative';
+
+        const predictionConfidence = Math.min(95, 65 + (overallScore - 6.5) * 5 + Math.log(subscription) * 3);
+
+        // Listing Gains & Subscription
+        let listingGains: number | undefined;
+        if (status === 'listed') {
+            const openPrice = parseNumeric(item.post_ipo_performance.listing_day_performance.split('Open: ')[1]);
+            if (openPrice && priceRange[1]) {
+                listingGains = ((openPrice - priceRange[1]) / priceRange[1]) * 100;
+            }
+        }
+
+        // Key Takeaways
+        const positiveTakeaway = item.key_takeaway.positive || "";
+        const negativeTakeaway = item.key_takeaway.negative || "";
+
+        return {
+            id: String(index + 1),
+            companyName,
+            sector,
+            priceRange,
+            lotSize,
+            openDate: openDateObj.toISOString().split('T')[0],
+            closeDate: closeDateObj.toISOString().split('T')[0],
+            listingDate: listingDateObj.toISOString().split('T')[0],
+            status,
+            subscriptionRatio: subscription,
+            listingGains,
+            marketCap: parseNumeric(priceStr.split('Market cap: ')[1]) || (peRatio || 30) * (parseNumeric(item.company_fundamentals.eps_trends.split('FY25: ')[1]) || 10),
+            issueSize,
+            description,
+            financialScore,
+            valuationScore,
+            managementScore,
+            marketPositionScore,
+            demandScore,
+            marketSentimentScore,
+            businessModelScore,
+            overallPrediction,
+            predictionConfidence,
+            keyStrengths: positiveTakeaway.split(/[+→•,]/).map((s:string) => s.trim()).filter(Boolean),
+            keyRisks: negativeTakeaway.split(/[+→•,]/).map((s:string) => s.trim()).filter(Boolean),
+            analystRating: overallPrediction === 'positive' ? 'buy' : overallPrediction === 'neutral' ? 'hold' : 'avoid',
+        };
+    });
+};
+
+
 export function IPOCenter() {
   const [activeTab, setActiveTab] = useState('listings');
+  
+  // Use useMemo to transform data only once
+  const ipoData: IPO[] = useMemo(() => transformRawData(rawIpoData), []);
+  
+  // Find the first upcoming IPO for the predictor
+  const upcomingIpoForPredictor = ipoData.find(ipo => ipo.status === 'upcoming') || ipoData[0];
+  
   const [predictionInput, setPredictionInput] = useState<IPOPredictionInput>({
-    companyName: '',
-    sector: 'Technology',
-    issueSize: 1000,
-    priceRange: [100, 120],
-    revenueGrowth: 15,
-    profitMargin: 8,
-    debtToEquity: 0.5,
-    peRatio: 25,
+    companyName: upcomingIpoForPredictor.companyName,
+    sector: upcomingIpoForPredictor.sector,
+    issueSize: upcomingIpoForPredictor.issueSize,
+    priceRange: upcomingIpoForPredictor.priceRange,
+    revenueGrowth: 15, // Default or parsed value
+    profitMargin: 8, // Default or parsed value
+    debtToEquity: 1.2, // Default or parsed value
+    peRatio: 35, // Default or parsed value
     marketShare: 5,
     competitiveAdvantage: 7,
     managementExperience: 8,
@@ -126,147 +259,9 @@ export function IPOCenter() {
     institutionalInterest: 6
   });
 
-  const ipoData: IPO[] = [
-    {
-      id: '1',
-      companyName: 'TechCorp Solutions Ltd',
-      sector: 'Technology',
-      priceRange: [450, 480],
-      lotSize: 30,
-      openDate: '2024-02-15',
-      closeDate: '2024-02-19',
-      listingDate: '2024-02-25',
-      status: 'upcoming',
-      marketCap: 5600,
-      issueSize: 1200,
-      description: 'Leading software solutions provider specializing in AI and machine learning applications for enterprise clients.',
-      financialScore: 8.5,
-      valuationScore: 7.2,
-      managementScore: 9.1,
-      marketPositionScore: 8.0,
-      demandScore: 7.8,
-      marketSentimentScore: 8.2,
-      businessModelScore: 8.7,
-      overallPrediction: 'positive',
-      predictionConfidence: 85,
-      keyStrengths: ['Strong AI/ML expertise', 'Experienced management', 'Growing market demand', 'Solid financials'],
-      keyRisks: ['High competition', 'Technology disruption risk', 'Valuation concerns'],
-      analystRating: 'buy'
-    },
-    {
-      id: '2',
-      companyName: 'GreenEnergy Power Ltd',
-      sector: 'Renewable Energy',
-      priceRange: [280, 320],
-      lotSize: 45,
-      openDate: '2024-02-10',
-      closeDate: '2024-02-14',
-      listingDate: '2024-02-20',
-      status: 'open',
-      subscriptionRatio: 2.4,
-      marketCap: 3400,
-      issueSize: 800,
-      description: 'Solar and wind energy solutions company with operations across multiple states in India.',
-      financialScore: 7.8,
-      valuationScore: 8.5,
-      managementScore: 7.5,
-      marketPositionScore: 8.8,
-      demandScore: 9.2,
-      marketSentimentScore: 9.0,
-      businessModelScore: 8.3,
-      overallPrediction: 'positive',
-      predictionConfidence: 91,
-      keyStrengths: ['Government support', 'Growing renewable sector', 'Strong order book', 'Attractive valuation'],
-      keyRisks: ['Policy changes', 'Weather dependency', 'Execution challenges'],
-      analystRating: 'buy'
-    },
-    {
-      id: '3',
-      companyName: 'HealthTech Innovations',
-      sector: 'Healthcare',
-      priceRange: [650, 700],
-      lotSize: 20,
-      openDate: '2024-01-25',
-      closeDate: '2024-01-29',
-      listingDate: '2024-02-05',
-      status: 'closed',
-      subscriptionRatio: 5.8,
-      marketCap: 8900,
-      issueSize: 1500,
-      description: 'Digital healthcare platform providing telemedicine and health monitoring solutions.',
-      financialScore: 7.2,
-      valuationScore: 6.8,
-      managementScore: 8.5,
-      marketPositionScore: 7.9,
-      demandScore: 8.7,
-      marketSentimentScore: 8.1,
-      businessModelScore: 8.9,
-      overallPrediction: 'positive',
-      predictionConfidence: 82,
-      keyStrengths: ['Post-COVID healthcare focus', 'Digital transformation', 'Scalable platform', 'Strong subscription'],
-      keyRisks: ['Regulatory challenges', 'High valuation', 'Intense competition'],
-      analystRating: 'hold'
-    },
-    {
-      id: '4',
-      companyName: 'Urban Logistics Ltd',
-      sector: 'Logistics',
-      priceRange: [380, 420],
-      lotSize: 35,
-      openDate: '2024-01-15',
-      closeDate: '2024-01-19',
-      listingDate: '2024-01-25',
-      status: 'listed',
-      subscriptionRatio: 3.2,
-      listingGains: 15.6,
-      marketCap: 4200,
-      issueSize: 900,
-      description: 'Last-mile delivery and warehousing solutions for e-commerce and retail companies.',
-      financialScore: 7.5,
-      valuationScore: 7.8,
-      managementScore: 7.2,
-      marketPositionScore: 8.1,
-      demandScore: 7.9,
-      marketSentimentScore: 7.5,
-      businessModelScore: 7.7,
-      overallPrediction: 'positive',
-      predictionConfidence: 78,
-      keyStrengths: ['E-commerce growth', 'Last-mile expertise', 'Strong client base', 'Good listing performance'],
-      keyRisks: ['High fuel costs', 'Labor challenges', 'Competition from giants'],
-      analystRating: 'hold'
-    },
-    {
-      id: '5',
-      companyName: 'Fintech Solutions Inc',
-      sector: 'Financial Services',
-      priceRange: [520, 580],
-      lotSize: 25,
-      openDate: '2024-01-05',
-      closeDate: '2024-01-09',
-      listingDate: '2024-01-15',
-      status: 'listed',
-      subscriptionRatio: 7.1,
-      listingGains: -3.2,
-      marketCap: 6800,
-      issueSize: 1300,
-      description: 'Digital lending and payment solutions platform serving SMEs and retail customers.',
-      financialScore: 6.8,
-      valuationScore: 6.2,
-      managementScore: 7.8,
-      marketPositionScore: 7.1,
-      demandScore: 8.5,
-      marketSentimentScore: 6.9,
-      businessModelScore: 7.4,
-      overallPrediction: 'neutral',
-      predictionConfidence: 72,
-      keyStrengths: ['Fintech boom', 'Strong demand', 'Digital payments growth', 'SME focus'],
-      keyRisks: ['Regulatory tightening', 'Credit risks', 'High competition', 'Valuation concerns'],
-      analystRating: 'hold'
-    }
-  ];
+  const sectors = useMemo(() => Array.from(new Set(ipoData.map(ipo => ipo.sector))), [ipoData]);
 
-  const sectors = ['Technology', 'Healthcare', 'Financial Services', 'Renewable Energy', 'E-commerce', 'Manufacturing', 'Infrastructure', 'FMCG', 'Telecommunications', 'Education'];
-
+  // --- Rest of the component logic (kept as in original file) ---
   const calculateIPOScore = (input: IPOPredictionInput) => {
     // Financial Performance Score (30%)
     const financialScore = (
@@ -335,8 +330,6 @@ export function IPOCenter() {
   const getStatusColor = (status: IPO['status']) => {
     switch (status) {
       case 'upcoming': return 'bg-blue-50 text-blue-600 border-blue-200';
-      case 'open': return 'bg-green-50 text-[#0F9D58] border-green-200';
-      case 'closed': return 'bg-orange-50 text-orange-600 border-orange-200';
       case 'listed': return 'bg-gray-50 text-gray-600 border-gray-200';
       default: return 'bg-gray-50 text-gray-600 border-gray-200';
     }
@@ -345,8 +338,6 @@ export function IPOCenter() {
   const getStatusIcon = (status: IPO['status']) => {
     switch (status) {
       case 'upcoming': return <Clock className="w-4 h-4" />;
-      case 'open': return <AlertCircle className="w-4 h-4" />;
-      case 'closed': return <CheckCircle className="w-4 h-4" />;
       case 'listed': return <TrendingUp className="w-4 h-4" />;
       default: return null;
     }
@@ -378,10 +369,12 @@ export function IPOCenter() {
       default: return 'bg-gray-100 text-gray-800';
     }
   };
+  
+  const [listingFilter, setListingFilter] = useState('upcoming');
 
   const filteredIPOs = ipoData.filter(ipo => {
-    if (activeTab === 'all') return true;
-    return ipo.status === activeTab;
+    if (listingFilter === 'all') return true;
+    return ipo.status === listingFilter;
   });
 
   const formatDate = (dateString: string) => {
@@ -498,11 +491,9 @@ export function IPOCenter() {
             <CardHeader>
               <div className="flex justify-between items-center">
                 <CardTitle className="text-gray-900">IPO Listings with AI Predictions</CardTitle>
-                <Tabs value={activeTab === 'listings' ? 'upcoming' : activeTab} onValueChange={(value) => setActiveTab(value)} className="w-auto">
+                <Tabs value={listingFilter} onValueChange={setListingFilter} className="w-auto">
                   <TabsList className="bg-gray-100">
                     <TabsTrigger value="upcoming" className="data-[state=active]:bg-[#0F9D58] data-[state=active]:text-white">Upcoming</TabsTrigger>
-                    <TabsTrigger value="open" className="data-[state=active]:bg-[#0F9D58] data-[state=active]:text-white">Open</TabsTrigger>
-                    <TabsTrigger value="closed" className="data-[state=active]:bg-[#0F9D58] data-[state=active]:text-white">Closed</TabsTrigger>
                     <TabsTrigger value="listed" className="data-[state=active]:bg-[#0F9D58] data-[state=active]:text-white">Listed</TabsTrigger>
                   </TabsList>
                 </Tabs>
@@ -549,7 +540,7 @@ export function IPOCenter() {
                             </div>
                             <div>
                               <span className="text-gray-500">Market Cap</span>
-                              <div className="font-medium text-gray-900">₹{ipo.marketCap} Cr</div>
+                              <div className="font-medium text-gray-900">₹{ipo.marketCap.toLocaleString()} Cr</div>
                             </div>
                           </div>
 
@@ -572,7 +563,7 @@ export function IPOCenter() {
                                   <span className="capitalize">{ipo.overallPrediction}</span>
                                 </div>
                                 <Badge className="bg-blue-100 text-blue-800">
-                                  {ipo.predictionConfidence}% Confidence
+                                  {ipo.predictionConfidence.toFixed(0)}% Confidence
                                 </Badge>
                               </div>
                             </div>
@@ -581,7 +572,7 @@ export function IPOCenter() {
                               <div>
                                 <h5 className="text-sm font-medium text-green-700 mb-2">Key Strengths</h5>
                                 <ul className="text-xs text-gray-600 space-y-1">
-                                  {ipo.keyStrengths.map((strength, index) => (
+                                  {ipo.keyStrengths.slice(0, 4).map((strength, index) => (
                                     <li key={index} className="flex items-center">
                                       <CheckCircle className="w-3 h-3 text-green-500 mr-1 flex-shrink-0" />
                                       {strength}
@@ -592,7 +583,7 @@ export function IPOCenter() {
                               <div>
                                 <h5 className="text-sm font-medium text-red-700 mb-2">Key Risks</h5>
                                 <ul className="text-xs text-gray-600 space-y-1">
-                                  {ipo.keyRisks.map((risk, index) => (
+                                  {ipo.keyRisks.slice(0, 4).map((risk, index) => (
                                     <li key={index} className="flex items-center">
                                       <AlertTriangle className="w-3 h-3 text-red-500 mr-1 flex-shrink-0" />
                                       {risk}
