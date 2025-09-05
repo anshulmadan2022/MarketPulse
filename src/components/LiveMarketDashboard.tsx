@@ -334,9 +334,9 @@ export function LiveMarketDashboard() {
         transition={{ duration: 0.5 }}
       >
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Live Market Dashboard</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Live Market Dashboard </h1>
           <p className="text-gray-600 mt-1">
-            Real-time market data powered by Perplexity AI
+            Real-time market data powered by Perplexity AI (Dummy data)
             {lastUpdate && (
               <span className="ml-2 text-sm">
                 <Clock className="w-4 h-4 inline mr-1" />
