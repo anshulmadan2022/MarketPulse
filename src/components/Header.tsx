@@ -15,6 +15,7 @@ import { AuthModal } from './AuthModal';
 import { authAPI } from '../utils/api';
 import { toast } from 'sonner@2.0.3';
 import { motion } from 'framer-motion';
+import { LoginPortal } from './LoginPortal';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
@@ -26,6 +27,7 @@ export function Header({ onNavigate }: HeaderProps) {
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [showLoginPortal, setShowLoginPortal] = useState(false);
 
   // Determine current page from URL
   const getCurrentPage = () => {
@@ -49,6 +51,10 @@ export function Header({ onNavigate }: HeaderProps) {
     } finally {
       setLoading(false);
     }
+  };
+  const handleLogin = (userType: 'user' | 'sebi-entity' | 'sebi-authority') => {
+    console.log('Login successful for:', userType);
+    setShowLoginPortal(false);
   };
 
   const handleSignOut = async () => {
@@ -228,7 +234,7 @@ export function Header({ onNavigate }: HeaderProps) {
                 <Button 
                   variant="secondary" 
                   size="sm" 
-                  onClick={() => setShowAuthModal(true)}
+                  onClick={() => setShowLoginPortal(true)}
                   className="bg-[#0F9D58] text-white hover:bg-[#0e8a4f] transition-all duration-300 rounded-xl px-6 py-3 font-semibold"
                   disabled={loading}
                 >
@@ -296,11 +302,13 @@ export function Header({ onNavigate }: HeaderProps) {
       </div>
 
       {/* Auth Modal */}
-      <AuthModal 
-        open={showAuthModal}
-        onOpenChange={setShowAuthModal}
-        onAuthSuccess={handleAuthSuccess}
-      />
+      {/* Login Portal Modal */}
+              {showLoginPortal && (
+                <LoginPortal
+                  onClose={() => setShowLoginPortal(false)}
+                  onLogin={handleLogin}
+                />
+              )}
     </motion.header>
   );
 }
